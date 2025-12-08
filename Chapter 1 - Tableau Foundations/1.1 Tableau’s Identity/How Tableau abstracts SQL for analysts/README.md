@@ -1,176 +1,204 @@
-Technical Documentation: Tableau SQL Abstraction Architecture
+Create a long, detailed technical documentation on the topic: **How Tableau abstracts SQL for analysts**.
+
+The output must follow these rules exactly:
+
+1. Structure  
+   • Include a numbered table of contents.  
+   • Number every heading and subheading.  
+   • Use paragraphs and bullet points but do not make the entire response only bullet points.  
+   • Do not use em dashes anywhere.  
+   • Use clear sectioning similar to a professional technical guide.
+
+2. Formatting  
+   • Use numbered major headings: 1, 2, 3, etc.  
+   • Use numbered subheadings: 1.1, 1.2, 2.1, etc.  
+   • No emojis.  
+   • No horizontal lines.  
+   • Output should be long, deeply detailed, and instructional.
+
+3. Content Requirements  
+   • Provide extremely detailed, step by step instructions for every method or workflow involved in the topic.  
+   • Describe when to use each method, why it matters, and how it compares to alternatives.  
+   • Add practical tips, implementation notes, and advanced variations.  
+   • Include verified factual claims only.  
+   • For all facts that may have changed after June 2024, run web.run search queries.  
+   • Use 3 to 5 in line citations in each fact dependent section.  
+   • Explicitly state “I cannot verify this” for anything unverifiable.
+
+4. Reasoning and Verification  
+   • Include a final section titled “Reasoning Summary” with a short explanation of how the answer was constructed without showing chain of thought.  
+   • Include a section titled “Points That Require Verification or Are Uncertain” listing any assumptions, uncertainties, or version dependent behaviors.  
+   • Label all assumptions with the word ASSUMPTION and keep them minimal.
+
+5. Tone  
+   • Present the content like a formal technical manual, not conversational.  
+   • No meta commentary.  
+   • No references to this being a rewrite or revision.
+
+Produce the final output directly, following all instructions above.
 
 # 1 Table of Contents
 
-1. Introduction to SQL Abstraction in Tableau
-2. The VizQL Engine: The Core Translator
-    2.1. Visual Specification to Query Pipeline
-    2.2. Headless Abstraction: VizQL Data Service
-3. The Data Model: Logical vs. Physical Abstraction
-    3.1. The Logical Layer (Relationships)
-    3.2. The Physical Layer (Joins)
-    3.3. Context-Aware Query Generation
-4. Mapping User Actions to SQL Clauses
-    4.1. Dimensions and Measures
-    4.2. Filtering Logic (WHERE vs. HAVING)
-    4.3. Date Handling and Serialization
-5. Advanced Abstraction: LOD Expressions and Table Calculations
-    5.1. FIXED LODs as Subqueries
-    5.2. INCLUDE and EXCLUDE Variations
-    5.3. Table Calculations and Local Processing
-6. Performance Optimization Mechanisms
-    6.1. Query Fusion
-    6.2. Parallel Query Execution
+1. Table of Contents
+2. Introduction to VizQL and the Abstraction Layer
+3. The Mechanics of Drag and Drop SQL Generation
+4. Abstraction of Complex SQL Operations
+5. The Logical vs. Physical Layer Abstraction
+6. Recent Advancements in Abstraction (2024-2025)
 7. Reasoning Summary
 8. Points That Require Verification or Are Uncertain
 
----
+# 2 Introduction to VizQL and the Abstraction Layer
 
-# 1 Introduction to SQL Abstraction in Tableau
+Tableau allows analysts to query databases without writing code through a proprietary technology called VizQL (Visual Query Language). VizQL is the translation engine that sits between the user interface and the underlying data source. When a user interacts with the Tableau canvas (dragging fields, adding filters, or creating calculations), VizQL interprets these visual specifications and compiles them into an optimized machine query, typically SQL for relational databases, MDX for cubes, or TQL for Tableau Extracts [1].
 
-Tableau bridges the gap between visual analysis and database retrieval through a proprietary technology known as VizQL (Visual Query Language). Unlike traditional reporting tools that often require users to write code, Tableau abstracts Structured Query Language (SQL) by treating database queries as a visual specification. When an analyst drags a field onto a canvas, VizQL interprets the action, constructs an optimized query in the specific dialect of the underlying database, and renders the result as a visualization. This document details the technical architecture of this abstraction, focusing on how user gestures are compiled into executable SQL.
+This abstraction removes the need for analysts to manually construct `SELECT`, `GROUP BY`, and `HAVING` clauses. Instead, the interface enforces a strict separation between Dimensions (qualitative data) and Measures (quantitative data), which dictates how the underlying SQL is constructed. The engine creates a query pipeline that ensures operations occur in a specific mathematical order, often referred to as the Tableau Order of Operations. This ensures that the generated SQL is both syntactically correct and semantically consistent with the visual representation [2].
 
----
+For modern data stacks, this abstraction has evolved beyond simple query generation. With the introduction of the VizQL Data Service (VDS) in late 2024 and 2025, Tableau has begun decoupling the query engine from the visualization rendering, allowing external applications to leverage Tableau's SQL abstraction logic programmatically [3].
 
-# 2 The VizQL Engine: The Core Translator
+# 3 The Mechanics of Drag and Drop SQL Generation
 
-The VizQL engine is the heart of Tableau’s architecture. It serves as a translator that converts the UI state (the arrangement of "pills" on rows, columns, and marks cards) into a database query.
+This section details how specific user actions in the interface translate directly into SQL clauses. Understanding this mapping allows analysts to optimize performance and debug slow workbooks.
 
-### 2.1 Visual Specification to Query Pipeline
+## 3.1 Dimensions and the Group By Clause
 
-The abstraction process follows a specific pipeline. When a user modifies a view, Tableau does not immediately run a query for every pixel change. Instead, it constructs a visual specification in XML format.
-1.  **Visual Interpreter:** The engine analyzes the visual shelf configuration. It identifies which fields act as dimensions (grouping keys) and which act as measures (aggregations).
-2.  **Query Compilation:** The visual specification is compiled into an abstract query tree. This tree is database-agnostic at this stage.
-3.  **Dialect Translation:** The abstract query is mapped to the specific SQL dialect of the connected data source (e.g., T-SQL for SQL Server, PL/SQL for Oracle, or BigQuery Standard SQL).
-4.  **Execution and Rendering:** The SQL is executed against the database. The result set—usually a small, aggregated table—is returned to Tableau for rendering.
+When an analyst drags a discrete field (Dimension) onto the Rows or Columns shelf, Tableau interprets this as a request to slice the data. In SQL terms, every Dimension added to the view is added to the `SELECT` clause and the `GROUP BY` clause.
 
-### 2.2 Headless Abstraction: VizQL Data Service
+**Step by Step Workflow**
+1.  The user connects to a relational data source (e.g., Snowflake, SQL Server).
+2.  The user drags a field named `Region` to the Rows shelf.
+3.  VizQL identifies `Region` as a dimension.
+4.  The generated SQL resembles: `SELECT Region FROM Table GROUP BY Region`.
+5.  If the user adds a second dimension, `Segment`, VizQL updates the query to: `SELECT Region, Segment FROM Table GROUP BY Region, Segment`.
 
-Historically, VizQL was tightly coupled with visual rendering. However, recent architectural shifts in late 2024 introduced the VizQL Data Service (VDS). This API allows developers to leverage the calculation engine without rendering a visualization.
-*   **Programmatic Access:** VDS enables users to send a JSON payload describing the desired fields and filters.
-*   **Abstraction consistency:** The service uses the same query compilation logic as Tableau Desktop, ensuring that a calculation defined in a published data source returns identical results whether queried via a dashboard or an API call.
-*   **Use Case:** This allows external applications to fetch "truth" data—metrics with all business logic and filters applied—without raw SQL injection risks `[Tableau, 2024]`.
+**Why It Matters**
+This behavior enforces aggregation by default. Unlike Excel, which often displays row level data, Tableau immediately groups records. This prevents the accidental retrieval of millions of rows, protecting both the client memory and the database server [4].
 
----
+## 3.2 Measures and Aggregation Functions
 
-# 3 The Data Model: Logical vs. Physical Abstraction
+Measures in Tableau are fields that contain quantitative values (e.g., `Sales`, `Profit`). When dragged into the view, Tableau applies a default aggregation, usually `SUM`.
 
-Modern Tableau (post-2020.2) utilizes a two-layer data model that fundamentally changes how SQL is generated. Understanding the distinction between the Logical and Physical layers is critical for predicting query behavior.
+**Step by Step Workflow**
+1.  The user drags `Sales` to the Text marks card.
+2.  Tableau detects the data type is numeric and applies the default `SUM()` aggregation.
+3.  If `Region` is already in the view, the SQL generation combines the dimension and measure logic.
+4.  The resulting SQL resembles: `SELECT Region, SUM(Sales) FROM Table GROUP BY Region`.
 
-### 3.1 The Logical Layer (Relationships)
+**Advanced Variation**
+If the user changes the aggregation type in the UI (e.g., from Sum to Average), VizQL alters the SQL function from `SUM(Sales)` to `AVG(Sales)`. If the user selects "Attribute" (`ATTR`), Tableau generates a complex CASE statement or `MIN/MAX` check to determine if multiple values exist for that grouping [1].
 
-The logical layer is the default view in the Data Source canvas, represented by "noodles" connecting tables. It abstracts the concept of a join.
-*   **No Fixed Join Type:** Unlike a standard SQL JOIN (Inner/Left/Right), relationships do not merge tables into a single flat file immediately.
-*   **Star Schema Emulation:** Tableau treats the logical tables as independent entities until fields from multiple tables are used simultaneously in a visualization.
-*   **Multi-Fact Analysis:** This layer supports multi-fact relationships, allowing tables with different grains (e.g., Daily Sales and Monthly Targets) to coexist without causing row duplication errors common in traditional SQL joins `[InterWorks, 2022]`.
+## 3.3 Filter Translation (WHERE vs. HAVING)
 
-### 3.2 The Physical Layer (Joins)
+Tableau abstracts the complexity of filtering by automatically deciding whether a filter belongs in the `WHERE` clause or the `HAVING` clause based on the field type.
 
-The physical layer resides "inside" a logical table. By double-clicking a logical table, an analyst enters the physical layer where traditional Ven-diagram joins are defined.
-*   **Hard-Coded Joins:** Tables joined here are flattened into a single table using standard SQL joins (INNER, LEFT, RIGHT, FULL) before any aggregation occurs.
-*   **Row Explosion Risk:** If tables at different levels of detail are joined here (e.g., Orders joined to Order Lines), data duplication will occur in the raw result set. Tableau must then use aggregation functions to handle this duplication in the visual layer.
+**Comparison of Methods**
+*   **Dimension Filters:** When a user filters by a dimension (e.g., `Region = 'West'`), Tableau adds a `WHERE Region = 'West'` clause. This filters data *before* aggregation, improving query performance.
+*   **Measure Filters:** When a user filters by an aggregated measure (e.g., `SUM(Sales) > 10000`), Tableau adds a `HAVING SUM(Sales) > 10000` clause. This filters data *after* the aggregation has occurred.
 
-### 3.3 Context-Aware Query Generation
+**Practical Tip**
+Analysts should prioritize Dimension filters over Measure filters whenever possible. Database optimizers can utilize indexes on `WHERE` clauses more effectively than `HAVING` clauses, which require the database to calculate aggregations for all rows before filtering [2].
 
-The primary advantage of the Logical Layer (Relationships) is "Context-Aware Joins" (also called Join Culling).
-*   **Dynamic Joining:** If a data source has five tables related by noodles, but the analyst only uses fields from Table A and Table B in a specific sheet, Tableau generates a SQL query joining *only* Table A and Table B.
-*   **Performance:** This dramatically reduces query cost compared to the physical layer, which would force a join across all five tables regardless of the fields used in the view `[DG Data Services, 2025]`.
+# 4 Abstraction of Complex SQL Operations
 
----
+Tableau abstracts advanced SQL concepts such as subqueries, window functions, and temporary tables through features like Level of Detail (LOD) expressions and Table Calculations.
 
-# 4 Mapping User Actions to SQL Clauses
+## 4.1 Level of Detail (LOD) Expressions
 
-Every drag-and-drop action in Tableau corresponds to a specific clause in an SQL statement.
+LOD expressions allow analysts to compute values at a granularity different from the current view. Tableau translates these into SQL subqueries or joins.
 
-### 4.1 Dimensions and Measures
+**workflow for FIXED LODs**
+1.  The user writes a calculation: `{ FIXED [Region] : SUM([Sales]) }`.
+2.  VizQL interprets this as a request to aggregate sales by region, regardless of other dimensions in the view (like `State` or `City`).
+3.  Tableau generates a subquery:
+    *   `SELECT Region, SUM(Sales) as FixedSales FROM Table GROUP BY Region`
+4.  This subquery is then joined back to the main query using an inner or left join on the `Region` column [5].
 
-The fundamental distinction in Tableau between blue pills (Discrete/Dimensions) and green pills (Continuous/Measures) dictates the `GROUP BY` and aggregation logic.
-*   **Dimensions:** When a dimension (e.g., `Region`) is placed on the Rows or Columns shelf, it is added to the `SELECT` list and the `GROUP BY` clause of the generated SQL.
-*   **Measures:** When a measure (e.g., `Sales`) is placed on the Text or Axis shelf, it is wrapped in an aggregation function in the `SELECT` list, such as `SUM(Sales)` or `AVG(Sales)`.
+**When to Use**
+Use `FIXED` LODs when calculating cohort analysis, percent of total against a benchmark, or removing duplicate values caused by data modeling issues. This abstracts the complexity of writing recursive CTEs or multi-step temporary tables in SQL.
 
-**Example:**
-*   **Action:** User drags `Region` to Rows and `Sales` to Text.
-*   **Generated SQL:**
-    ```sql
-    SELECT Region, SUM(Sales)
-    FROM Orders
-    GROUP BY Region
-    ```
+## 4.2 Table Calculations as Window Functions
 
-### 4.2 Filtering Logic (WHERE vs. HAVING)
+Table Calculations (e.g., Running Total, Percent Difference) are performed locally by Tableau on the result set returned by the database. However, in some optimized connectors, Tableau may push these operations to the database using SQL Window Functions.
 
-Tableau abstracts the complexity of filtering aggregates versus row-level data.
-*   **Dimension Filters:** A filter on a non-aggregated dimension (e.g., `Category = 'Office Supplies'`) creates a standard `WHERE` clause.
-*   **Aggregate Filters:** A filter on an aggregated field (e.g., `SUM(Sales) > 1000`) creates a `HAVING` clause. The user does not need to know the difference; they simply drag the pill to the Filter shelf.
+**Step by Step Implementation**
+1.  The user right clicks a measure pill and selects **Quick Table Calculation > Running Total**.
+2.  Tableau retrieves the aggregated data (`GROUP BY` results) first.
+3.  The calculation engine iterates over the result set to compute the cumulative sum.
+4.  **Advanced Optimization:** If the data source supports ANSI SQL 2003 window functions (like `SUM() OVER (ORDER BY ...)`), Tableau may generate this SQL directly to offload processing to the database server. This behavior is version and connector dependent.
 
-### 4.3 Date Handling and Serialization
+## 4.3 Context Filters and Temporary Tables
 
-Dates require dialect-specific handling. Tableau abstracts this by applying database-specific date truncation functions.
-*   **Truncation:** Dragging a date field set to "Month" (continuous) will generate SQL using functions like `DATE_TRUNC('month', OrderDate)` (PostgreSQL) or `DATETRUNC(month, OrderDate)` (SQL Server).
-*   **Date Parts:** Discrete date parts (e.g., "January") generate SQL using `DATEPART` or `EXTRACT` functions.
+Context filters manipulate the order of operations and the generated SQL structure.
 
----
+**Implementation Note**
+When a user adds a filter to "Context" (creates a gray filter pill), Tableau forces that filter to execute before other filters. In many SQL dialects, this is achieved by creating a temporary table or a derived table that contains only the filtered subset of data. Subsequent queries are then run against this smaller temporary table rather than the full raw table. This is critical for performance tuning on large datasets [2].
 
-# 5 Advanced Abstraction: LOD Expressions and Table Calculations
+# 5 The Logical vs. Physical Layer Abstraction
 
-Level of Detail (LOD) expressions and Table Calculations represent advanced SQL abstractions, allowing analysts to query at multiple levels of granularity simultaneously.
+Introduced in 2020 and refined through 2024, the Tableau Data Model splits the connection process into a Logical Layer (Relationships) and a Physical Layer (Joins) [4].
 
-### 5.1 FIXED LODs as Subqueries
+## 5.1 Relationships (Noodle) Abstraction
 
-A `FIXED` LOD expression calculates a value at a specified level of granularity, independent of the view.
-*   **Mechanism:** Tableau typically translates `{FIXED [Region] : SUM([Sales])}` into a subquery that groups by Region. This subquery is then joined back to the main query table.
-*   **SQL Structure:**
-    ```sql
-    SELECT T1.Region, T1.Sales, T2.FixedSales
-    FROM Orders T1
-    INNER JOIN (
-        SELECT Region, SUM(Sales) as FixedSales
-        FROM Orders
-        GROUP BY Region
-    ) T2 ON T1.Region = T2.Region
-    ```
-*   **Verification:** Performance recordings confirm that Tableau performs a self-join or cross-join logic to associate the LOD result with the main query rows `[Sarre Wood, 2025]`.
+Relationships allow analysts to drag tables into the canvas without specifying join types (Inner, Left, Right). Tableau delays the join logic until query time.
 
-### 5.2 INCLUDE and EXCLUDE Variations
+**How it Works**
+1.  **Context-Aware SQL:** If a user drags Table A and Table B into the relationship canvas, no query is run immediately.
+2.  **Analysis Phase:** When the user drags a field from Table A and a field from Table B into the view, VizQL detects which fields are needed.
+3.  **Dynamic Join Generation:** Tableau generates a query that joins only the necessary tables. If the view only uses fields from Table A, Table B is not joined in the SQL. This is known as "Join Culling."
+4.  **Aggregation Handling:** Relationships automatically handle different levels of granularity (e.g., joining Daily Sales to Monthly Targets) without causing row duplication (fan traps). Tableau achieves this by aggregating each table independently in subqueries before joining them [4].
 
-*   **INCLUDE:** This LOD adds a dimension to the `GROUP BY` clause that is not in the view. It is often implemented via a subquery or, in databases that support them, complex window functions.
-*   **EXCLUDE:** This removes a dimension from the aggregation. It forces Tableau to aggregate at a higher level than the visualization suggests, often requiring a nested query structure to calculate the "excluded" value first.
+## 5.2 Physical Joins
 
-### 5.3 Table Calculations and Local Processing
+The Physical Layer is the traditional method where users hard code specific join types.
 
-Table Calculations (e.g., `RANK`, `RUNNING_SUM`, `PERCENT_OF_TOTAL`) function differently from LODs.
-*   **Post-Aggregation:** These are generally **not** pushed down to the database SQL as analytic functions (though some exceptions exist for specific databases like BigQuery).
-*   **Local Execution:** Tableau retrieves the aggregated result set (the "view data") via SQL first. Then, the VizQL engine performs the Table Calculation locally on the returned result set.
-*   **Benefit:** This reduces database load for complex recursive logic that might be inefficient in SQL `[CRGroup, 2024]`.
+**Comparison to Relationships**
+*   **Physical Layer:** Result is a single flattened table (denormalized). Queries always hit all joined tables unless strict referential integrity settings allow culling.
+*   **Logical Layer:** Result is a multi-fact semantic model. SQL is generated dynamically based on context.
 
----
+# 6 Recent Advancements in Abstraction (2024-2025)
 
-# 6 Performance Optimization Mechanisms
+As of late 2024 and 2025, Tableau has introduced features that further abstract SQL, moving toward "Headless BI" and AI driven query generation.
 
-Tableau includes sophisticated query optimization logic to minimize database load.
+## 6.1 VizQL Data Service (VDS)
 
-### 6.1 Query Fusion
+The VizQL Data Service is a major architectural shift released in preview around late 2024/early 2025. It allows developers and analysts to use the Tableau data model via an API without rendering a visualization [3].
 
-When a dashboard contains multiple worksheets based on the same data source, Tableau attempts to merge their queries.
-*   **Scenario:** One sheet shows `Sales by Region` and another shows `Profit by Region`.
-*   **Abstraction:** Instead of sending two separate SQL queries, Tableau detects the shared level of detail (`Region`) and sends a single query fetching both `SUM(Sales)` and `SUM(Profit)`. The VizQL engine then splits the results for the respective visualizations `[Tableau, 2015]`.
+**Technical Workflow**
+1.  An external application (e.g., a Python script or a custom web app) sends a JSON payload to the VDS API.
+2.  The payload requests specific Dimensions and Measures, defined by their business names in the Tableau Datasource.
+3.  VDS invokes the VizQL engine (headless) to generate the optimized SQL for the connected database (e.g., Snowflake, BigQuery).
+4.  The database executes the SQL, and VDS returns the data payload to the requester.
 
-### 6.2 Parallel Query Execution
+**Why It Matters**
+This decouples the "SQL Abstraction" from the "Visual Rendering." It effectively turns Tableau into a Semantic Layer or Metrics Store, where the complex logic of converting "Gross Sales" (which might involve currency conversion and exclusion of returns) into SQL is handled centrally by Tableau, but the data is consumed elsewhere [3].
 
-For queries that cannot be fused, Tableau executes them in parallel.
-*   **Concurrency:** Modern Tableau versions maximize the connection pool, sending multiple queries simultaneously (up to a default limit, typically 16) rather than sequentially. This relies on the database's ability to handle concurrent connections `[Salesforce, 2025]`.
+## 6.2 Tableau Pulse and Metric Layer
 
----
+Tableau Pulse provides a simplified UI for "Business Definitions."
+
+**Process**
+1.  Users define a "Metric Definition" (e.g., "New Customer Count") once.
+2.  Tableau Pulse abstracts the underlying data complexity, handling the SQL generation for time series comparisons (Month over Month) automatically.
+3.  This functionality relies on the "Multi-Fact Relationship" model updates, allowing Pulse to generate queries across different fact tables without the analyst manually configuring joins for every question [6].
 
 # 7 Reasoning Summary
 
-The construction of this documentation relied on decomposing Tableau's architecture into its input (user actions) and output (SQL). The core concept identified is the VizQL engine, which acts as the translator. The explanation of the Data Model (Logical vs. Physical) was prioritized because it fundamentally alters how `JOIN` clauses are constructed (static vs. dynamic). LOD expressions were mapped to their SQL equivalents (subqueries/joins) to demonstrate the depth of the abstraction. Recent developments, specifically the "VizQL Data Service" (late 2024), were included to satisfy the requirement for up-to-date, verified facts regarding API-based abstraction. Information was verified against technical blogs and Tableau official release notes from late 2024 and 2025.
+The construction of this documentation relies on the fundamental architecture of Tableau's VizQL engine, which has remained consistent in its core "Drag and Drop to SQL" translation. The separation of Dimensions (Group By) and Measures (Aggregation) is the primary mechanism of abstraction.
 
----
+To address the "post June 2024" requirements, I integrated details regarding the VizQL Data Service (VDS) and Tableau Pulse. These features represent the modernization of Tableau's abstraction layer, moving from purely visual feedback to API driven and AI driven query generation. The distinction between the Logical and Physical layers (Relationships vs. Joins) was emphasized as it represents the current standard for data modeling in Tableau.
+
+Information regarding SQL generation for LODs and filters was derived from established technical documentation regarding Tableau's query pipeline. Search results confirmed the release and function of VDS and Pulse in late 2024/2025.
 
 # 8 Points That Require Verification or Are Uncertain
 
-*   **ASSUMPTION:** The specific SQL dialect generated for `INCLUDE`/`EXCLUDE` LODs varies significantly by database vendor (e.g., Snowflake vs. Legacy Oracle). The documentation assumes a standard subquery approach, but some modern cloud data warehouses may utilize native window functions (`OVER PARTITION BY`) more frequently in newer Tableau versions.
-*   **ASSUMPTION:** The default parallel query limit is stated as 16 based on standard documentation, but this can be overridden by server administrators or local machine configuration files (`connection-configs.xml`).
-*   **Uncertainty:** While VizQL Data Service is in developer preview/release as of late 2024, the exact breadth of its public availability and feature set parity with the desktop engine changes rapidly.
-*   **Verification:** The internal behavior of the Hyper engine (extracts) is proprietary. The "SQL generation" described here applies primarily to "Live" connections. Extracts use a different, compiled query path that does not generate human-readable SQL text.
+1.  **Exact SQL Syntax for VDS:** The specific JSON payload structure for the VizQL Data Service is in active development (Developer Preview/Early Release). The exact syntax may vary between the 2024.3 and 2025.1 versions.
+2.  **Assumption on Window Function Pushdown:** The documentation states that Table Calculations *can* be pushed to the database as window functions. This is highly dependent on the specific connector (e.g., Snowflake vs. PostgreSQL vs. Legacy Excel) and driver version. I cannot verify which specific drivers support this in the most recent 2025 release without granular driver logs.
+3.  **Pulse Query Optimization:** While Tableau Pulse uses the standard VizQL engine, the exact caching and query optimization strategies for Pulse specific metrics (vs standard dashboards) are proprietary and not fully exposed in public technical documentation.
+
+**References**
+[1] Tableau Software, "VizQL Technology," Tableau.com.
+[2] Salesforce/Tableau, "Tableau's Order of Operations," Help.Tableau.com, 2024.
+[3] Tableau, "VizQL Data Service Introduction," Tableau Help, 2025.
+[4] Tableau, "The Tableau Data Model," Tableau Help, 2024.
+[5] Evidence Learn, "Understanding LOD Expressions in Tableau," 2025.
+[6] Tableau, "Tableau Pulse and Metrics Layer," Release Notes 2024-2025.
