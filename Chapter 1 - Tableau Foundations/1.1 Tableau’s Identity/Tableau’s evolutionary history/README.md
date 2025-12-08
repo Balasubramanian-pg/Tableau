@@ -1,42 +1,3 @@
-Create a long, detailed technical documentation on the topic: **Tableau’s evolutionary history**.
-
-The output must follow these rules exactly:
-
-1. Structure  
-   • Include a numbered table of contents.  
-   • Number every heading and subheading.  
-   • Use paragraphs and bullet points but do not make the entire response only bullet points.  
-   • Do not use em dashes anywhere.  
-   • Use clear sectioning similar to a professional technical guide.
-
-2. Formatting  
-   • Use numbered major headings: 1, 2, 3, etc.  
-   • Use numbered subheadings: 1.1, 1.2, 2.1, etc.  
-   • No emojis.  
-   • No horizontal lines.  
-   • Output should be long, deeply detailed, and instructional.
-
-3. Content Requirements  
-   • Provide extremely detailed, step by step instructions for every method or workflow involved in the topic.  
-   • Describe when to use each method, why it matters, and how it compares to alternatives.  
-   • Add practical tips, implementation notes, and advanced variations.  
-   • Include verified factual claims only.  
-   • For all facts that may have changed after June 2024, run web.run search queries.  
-   • Use 3 to 5 in line citations in each fact dependent section.  
-   • Explicitly state “I cannot verify this” for anything unverifiable.
-
-4. Reasoning and Verification  
-   • Include a final section titled “Reasoning Summary” with a short explanation of how the answer was constructed without showing chain of thought.  
-   • Include a section titled “Points That Require Verification or Are Uncertain” listing any assumptions, uncertainties, or version dependent behaviors.  
-   • Label all assumptions with the word ASSUMPTION and keep them minimal.
-
-5. Tone  
-   • Present the content like a formal technical manual, not conversational.  
-   • No meta commentary.  
-   • No references to this being a rewrite or revision.
-
-Produce the final output directly, following all instructions above.
-
 # 1 Table of Contents
 
 1. Table of Contents
@@ -205,3 +166,4 @@ For the post-June 2024 requirements, verified search results confirmed the relea
 [6] Salesforce, "Tableau Pulse GA Release," February 2024.
 [7] Tableau, "VizQL Data Service API Reference," 2025.
 [8] Salesforce/Tableau, "Tableau Conference 2025 Keynote - Tableau Next," April 2025.
+
