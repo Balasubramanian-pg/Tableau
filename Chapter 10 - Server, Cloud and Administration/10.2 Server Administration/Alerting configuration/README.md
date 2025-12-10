@@ -1,67 +1,104 @@
 # Alerting configuration
+**Alerting Configuration in Tableau Cloud**
 
-## Alerting configuration in Tableau Cloud
+**Introduction**
+Tableau Cloud provides alerting features for data-driven notifications and subscription-based content updates. These tools allow users to receive automated notifications when data changes or when new content is published. This guide covers the two primary methods: Data Driven Notifications and Subscriptions.
 
-### Key Points
+**Data Driven Notifications**
+Data Driven Notifications allow users to set alerts on specific data points in a view. The system monitors the data and sends an alert when conditions are met.
 
-* Tableau Cloud uses Data-Driven Alerts to notify users when data points cross a specified threshold.
-* The system sends notifications either as an email, as an alert on the Tableau site, or through a connected Slack workspace.
-* A user must select a continuous numeric axis on a chart to create a Data-Driven Alert; discrete axes and map visualizations are not supported.
-* Site administrators control Data-Driven Alert settings for the entire site and manage extract refresh failure notifications.
+**Core Function**
+Users can subscribe to a single mark or a header in a view. They receive an alert when the underlying data value crosses a user-defined threshold.
 
-### Definitions
+**Configuration Process**
+*   Users open a published view on Tableau Cloud.
+*   They click the alert (bell) icon on the toolbar.
+*   The user selects "Add Alert" on a specific data mark or axis header.
+*   A configuration pane opens on the right side of the screen.
 
-* **Data-Driven Alert (DDA):** A mechanism that automatically sends a notification when a data value in a published view or dashboard crosses a pre-set threshold.
-* **Continuous Numeric Axis:** A graphic element on a chart that displays numeric values along an uninterrupted scale. It forms the basis for setting the alert's threshold value.
-* **Subscription:** A scheduled email that sends a snapshot of a view or workbook at a regular interval, irrespective of the data values within it.
+**Alert Settings**
+Users define these parameters:
+*   **Condition**: Choose when the alert triggers.
+    *   "When value meets a condition" (e.g., is greater than 10).
+    *   "When value changes" (any change in the data point).
+    *   "When data is refreshed" (triggers on each successful refresh).
+*   **Trigger Threshold**: For condition-based alerts, set the numerical threshold (e.g., >, <, =, >=, <=).
+*   **Notification Frequency**: Choose how often to receive the alert.
+    *   "Once per data change" sends one alert when the condition is first met.
+    *   "Each time condition is met" sends repeated alerts for each refresh cycle where the condition holds true.
+*   **Delivery Method**: Select email or mobile push notification via the Tableau Mobile app.
 
-### Core Concepts
+**Management**
+*   Users manage their alerts in "My Alerts" under their account settings.
+*   Administrators can see all alerts on the site in the Admin area under "Subscriptions and Alerts."
 
-* **Alert Condition Types**
-    * Data-Driven Alerts support conditions that trigger the notification when data is *above*, *below*, *equal*, *above-equal*, or *below-equal* to the threshold value.
-    * Users set the frequency for checking the data condition (e.g., once, hourly, daily, weekly).
-* **System Notifications**
-    * These cover background processes, such as extract refresh failures.
-    * The system can send notifications for server health monitoring, including server process events (up, down, failover) and drive space threshold warnings.
-* **Alert Visibility**
-    * An alert can be set as *private* (only the creator sees it) or *public* (any user with permissions for the worksheet can see it and add themselves as a recipient).
+**Limitations**
+*   Alerts require a live connection to the underlying data source or a regularly refreshed extract.
+*   The view author must enable alerts for the worksheet.
+*   Alerts only work on views with a single, discrete data point.
 
-### Process or Steps
+**Subscriptions**
+Subscriptions allow users to receive scheduled snapshots of an entire view or workbook via email.
 
-1.  **Select a Chart Element:** Open the view or dashboard and select a continuous numeric axis on a non-Gantt or non-map chart. This action opens the Alerts side panel.
-2.  **Define the Threshold:** Select the "Create" option from the Alerts side panel, and set a specific numeric value for the alert threshold. A red line appears on the visualization to indicate where the threshold falls.
-3.  **Configure Recipient and Frequency:** Specify the subject line of the notification and set a schedule for how often Tableau should check the data against the threshold. Add the list of recipients who should receive the notification.
-4.  **Confirm Alert Creation:** Select "Create Alert" to activate the monitoring process.
+**Core Function**
+Users receive a static image of a view or a link to a workbook delivered on a set schedule.
 
-### Examples
+**Configuration Process**
+*   Users open a view or workbook on Tableau Cloud.
+*   They click the subscribe (bell or envelope) icon.
+*   They select the subscription frequency: daily, weekly, or monthly.
+*   The user chooses the delivery time and format.
 
-* **Simple Data Change:** A daily alert is set on a line chart to notify the sales team when the `Sum of Sales` value rises above a value of $14,000.
-* **Conditional Alert:** An alert is created on a calculated field that returns a value of `1` only if the `Profit Ratio` is less than zero AND the `Returns Rate` is above a 6% rate. The alert threshold is set to `1`.
-* **Process Failure Alert:** A site administrator enables email notifications to be sent to the data source owner when a scheduled extract refresh task fails.
+**Subscription Settings**
+*   **Content**: Subscribe to a specific view or an entire workbook.
+*   **Schedule**: Set daily, weekly, or monthly delivery.
+*   **Attachment**: Choose to receive the view as an embedded image or a PDF attachment.
+*   **Filters**: Some subscriptions allow users to set a personalized filter for the data they receive.
 
-### Common Mistakes
+**Management**
+*   Users manage personal subscriptions in "My Subscriptions."
+*   Site Administrators can view and manage all subscriptions from the Admin area.
 
-* Setting an alert on a field that is *discrete* (such as a Count of Customers) rather than a *continuous measure*, which Tableau does not support for this feature.
-* Creating an alert on a worksheet and then renaming or deleting the underlying view, which causes the alert to fail and potentially be suspended.
-* Failing to check for suspended alerts in the **My Content** area after changes to a dashboard, which stops notifications even if the threshold is crossed.
+**Key Differences Between Alerts and Subscriptions**
+*   **Trigger**: Alerts are data condition-based. Subscriptions are time-based.
+*   **Content**: Alerts notify about a specific data point change. Subscriptions deliver a full view image.
+*   **Use Case**: Use alerts for monitoring key metrics. Use subscriptions for regular report distribution.
 
-### Reference Facts
+**Administrative Controls**
+Site Administrators have oversight tools for alerting.
 
-* Tableau Pulse offers its own alert system that works with metrics, separately from Data-Driven Alerts.
-* Alerts that fail consistently are suspended to preserve system resources. Administrators or alert owners can resume a suspended alert from the Tasks > Alerts area.
-* A data-driven alert can be configured using the Tableau REST API by sending a POST request to the `/api/api-version/sites/site-luid/dataAlerts` endpoint.
+**Access and Permissions**
+*   Site Administrators can disable the "Alerts" or "Subscriptions" feature site-wide via Site Settings.
+*   Workbook owners can disable alerts for their specific workbooks.
+*   User ability to create alerts depends on their license type and permissions on the view.
 
-### Thought Process (Condensed)
+**Monitoring**
+*   The "Subscription Activity" Admin view lists all active alerts and subscriptions.
+*   Admins can see the view, recipient, schedule/condition, and status.
 
-The notes were generated by extracting information about Data-Driven Alerts, system notifications, and administrative controls from the search results. Content was organized into the nine required sections from the template. The steps for the Process section focus on the most common user action, Data-Driven Alert creation. All banned vocabulary was avoided. ASSUMPTION: The search results from Tableau Help documentation reflect the current configuration practices for Tableau Cloud as of December 2025.
+**Best Practices for Configuration**
 
-### Verification Notes
+**For View Creators**
+*   **Optimize Data Sources**: Ensure data sources for alerting views use extracts or have fast live connections for reliable evaluation.
+*   **Simplify Views**: Design clear, single-point views for critical metrics to make alert setup intuitive for users.
+*   **Communicate**: Inform users which views are configured for alerts and what the key metrics mean.
 
-* Items that likely required external checks: current platform configuration details, API endpoints, and failure thresholds, as these can change after June 2024.
-* Items uncertain now: The exact failure threshold for alert suspension on Tableau Cloud. The search result of 350 consecutive failures is documented for Tableau Server, but the concept of suspension is true for both.
-* Items that do not apply: File access or environment permissions.
+**For Administrators**
+*   **Set Governance**: Establish guidelines for what types of data should use alerts to prevent notification overload.
+*   **Monitor Volume**: Use the Admin view to monitor the total number of alerts. A very high count may indicate poorly designed thresholds.
+*   **Audit Regularly**: Periodically review the "Subscription Activity" view to deactivate alerts on deprecated views or for inactive users.
+*   **Leverage Defaults**: Configure default schedules for subscriptions to standardize delivery times across the site.
 
-This video shows a quick way to create and manage data-driven alerts: [CUSTOMER DAILY ALERTS | Tableau in 90 seconds](https://www.youtube.com/watch?v=mj325ghMEVg)
+**Technical Considerations**
 
+**Data Refresh Dependency**
+*   Alerts only evaluate data during a scheduled extract refresh or when a live connection is queried.
+*   Subscriptions capture the view state at the scheduled time, which may depend on extract schedules.
 
-http://googleusercontent.com/youtube_content/0
+**Failure Handling**
+*   If a data source fails to refresh, dependent alerts will not trigger.
+*   Subscription emails will not send if the view errors at the scheduled delivery time.
+*   System errors are logged for administrator review.
+
+**Conclusion**
+Alerting in Tableau Cloud provides two main tools: Data Driven Notifications for threshold-based data alerts and Subscriptions for scheduled report delivery. Effective use requires understanding their distinct functions and configuration options. Administrators should monitor usage and establish light governance to maintain system performance and user relevance. Properly configured, these features turn static dashboards into proactive communication tools that drive timely business decisions.
