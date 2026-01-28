@@ -82,3 +82,54 @@ While powerful, there are limits:
 ### Summary Strategy
 If you have to do something **once**, use the Tableau UI.
 If you have to do something **50 times** (like aligning 50 icons, renaming 50 fields, or changing 50 colors), **use Python and XML.**
+
+
+Here are **30 unique use cases** for Tableau XML/Python automation, categorized by what they help you achieve. We can pick any of these to build a script for together.
+
+### 🎨 Formatting & Visual Consistency ( The "Pixel Perfect" Scripts)
+1.  **The "Padding Police":** Scan every container and object in the workbook and force **Outer Padding** to 0 and **Inner Padding** to 4 (or your standard) to remove unwanted whitespace.
+2.  **Global Font Enforcer:** Find every instance of "Times New Roman" or default fonts in titles, axes, and headers and replace them with your company’s standard font (e.g., "Roboto").
+3.  **Title Center-Aligner:** Loop through every worksheet placed on a dashboard and ensure the title alignment is set to `Center` instead of the default `Left`.
+4.  **Logo Swapper:** Locate the image path for your company logo object on every dashboard and update it to a new file path (great for rebranding).
+5.  **Dashboard Sizer:** Force every dashboard in a workbook to exact dimensions (e.g., 1920x1080) to ensure no "Automatic" sizing slips through.
+6.  **Grid Liner:** Turn off all Grid Lines and Zero Lines on every sheet in the workbook instantly (the "Clean Look" script).
+
+### 📐 Layout & Organization
+7.  **The "Legend Aligner":** Find all floating legends and move them to a specific X/Y coordinate (like the top right corner) on every dashboard.
+8.  **Container Renamer:** Programmatically rename layout containers based on their content (e.g., if it contains "Sales Sheet", rename the container "Sales Container") to make the Layout pane readable.
+9.  **Floating to Tiled Converter:** (Advanced) Read coordinates of floating objects and calculate the nearest Tiled structure (hard, but possible for simple grids).
+10. **Tab Reorder-er:** Sort the sheets and dashboards in the bottom tab bar alphabetically or by a specific naming convention (e.g., `DB_` first, `QC_` last).
+
+### 📝 Content & Text Management
+11. **Tooltip Disclaimer Injector:** Append a standard legal text string (e.g., *"Confidential Data - Do Not Share"*) to the bottom of the tooltip on every single sheet.
+12. **Typo Hunter:** Export all static text (titles, text boxes, captions) to a CSV to run a spell-check, then inject the corrected text back in.
+13. **Dynamic Title Updates:** Replace hardcoded years (e.g., "2023 Performance") in all titles with a parameter reference (e.g., `<Parameters.Year> Performance`).
+14. **Alias Manager:** Extract all field aliases to Excel, clean them up, and write them back (easier than the Alias menu in Desktop).
+
+### 🧮 Data & Calculations
+15. **The "Copy" Killer:** Find all fields ending in `(copy)` or ` 1`, ` 2` and strip the suffix to clean up the Data Pane.
+16. **Comment Injector:** Add a standard comment block to the top of every Calculated Field XML (e.g., `// Author: Data Team // Date: 2024`) for governance.
+17. **Calculation Prefixing:** Automatically add `c_` to the start of every calculated field name and update all references to it in other formulas so nothing breaks.
+18. **Number Format Standardizer:** Find all currency fields and force them to 0 decimal places or specific currency symbols ($ vs £).
+19. **Parameter Defaulter:** Reset the "Current Value" of all parameters to their "Default Value" (useful before publishing to ensure a clean state).
+
+### 🔍 Governance & Audit (The "Detective" Scripts)
+20. **Custom SQL Extractor:** Scrape the XML to find every instance of Custom SQL and save them to `.sql` files for your DBAs to review.
+21. **Hardcoded Filter Alert:** Scan all filters for hardcoded strings (e.g., `User = "John Doe"`) which might indicate a security flaw.
+22. **Unused Field Finder:** List all columns in the datasource that are *never* referenced in any sheet, calculation, or tooltip (helps you reduce extract size).
+23. **Broken Reference Scout:** Search for the XML tag that indicates a broken field (red exclamation mark) and list the sheet names where they exist.
+24. **Complexity Scorer:** Count the number of Marks, Calculations, and Sheets per dashboard to generate a "Complexity Score" report for performance tuning.
+
+### 🌐 Migration & Environment
+25. **Connection Switcher:** Change the Server Address and DB Name for all connections from "Staging_DB" to "Production_DB" in one go.
+26. **Version Downgrader:** (The classic hack) Modify the `version='...'` tag in the XML header to try and open a v2024 file in v2023 Desktop (works if no new features are used).
+27. **Workbook Merger:** Copy specific `<worksheet>` XML blocks from Workbook A and insert them into Workbook B (requires careful ID management).
+28. **Extract Path Updater:** If you moved your local `.hyper` files to a new folder, update the file paths in the workbook without manually locating each one.
+
+### 🚀 Workflow Automations
+29. **Sheet Un-hider:** Instantly unhide every sheet in the workbook (useful for debugging someone else's messy workbook).
+30. **Action Auditor:** List all Dashboard Actions (Filters, URL actions) and their source/target sheets to visualize the navigation flow.
+
+***
+
+**Which one of these sounds most painful for you right now?** Pick one, and we can write the Python script for it immediately.
