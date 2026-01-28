@@ -133,3 +133,75 @@ Here are **30 unique use cases** for Tableau XML/Python automation, categorized 
 ***
 
 **Which one of these sounds most painful for you right now?** Pick one, and we can write the Python script for it immediately.
+
+Here are **50 additional, unique, and high-value** use cases for Tableau automation with Python.
+
+I have categorized these by the specific "pain point" they solve in a real-world analytics environment.
+
+### 🧹 Clean-Up & Optimization (The "Janitor" Scripts)
+31. **The "Phone Layout" Destroyer:** Automatically delete the auto-generated "Phone" and "Tablet" layouts from every dashboard in the XML (these often break the design and are tedious to delete manually).
+32. **Parameter Pruner:** Scan all parameters, check if they are referenced in any calculated field or filter, and delete the ones that are orphans.
+33. **Folder Organizer:** Define a mapping (e.g., "Field starts with `Sales_` -> Move to Folder `Sales Metrics`") and have Python rearrange your Data Pane folder structure in the XML.
+34. **Custom Shape Cleaner:** Identify shape files referenced in the workbook that represent "null" or "default" assignments and strip them out to reduce file size.
+35. **Reference Line Labeler:** Find every reference line in the workbook and force the Label settings to `Value` or `Computation` instead of `None`.
+36. **Axis Ranger:** Force all axes on specific charts (e.g., "Trends") to have `Fixed` start points of 0 instead of `Automatic` to prevent misleading visuals.
+37. **Dual Axis Synchronizer:** Scan for dual-axis charts and check the XML flag for `synchronized='true'`. If it's false, force it to true (prevents the "misleading scale" error).
+38. **ZN() Wrapper:** Automatically wrap every measure used in the view in a `ZN()` function within the XML logic to handle nulls as zeros without creating new calculated fields.
+39. **Sort Order Enforcer:** Ensure that every specific dimension (e.g., "Month") is set to "Sort by Field" (e.g., "Date") rather than "Data Source Order".
+
+### 🌍 Localization & Translation (The "Enterprise" Scripts)
+40. **The "Auto-Translator":** Extract all Dashboard Titles, Text Objects, and Parameter Display Names, run them through Google Translate API (via Python), and inject the translated text back into the XML for a Spanish/French version.
+41. **Currency Symbol Swapper:** Regex replace all instances of `format='$#,##0'` with `format='€#,##0'` for regional deployment.
+42. **Date Format Standardizer:** Force all date fields to use `dd/mm/yyyy` (UK/Global) instead of the default `mm/dd/yyyy` (US).
+
+### 🔒 Security & Compliance
+43. **PII Scanner:** Scan all field names and custom SQL for keywords like "SSN", "CreditCard", "Email", or "Salary". Generate an alert report if found.
+44. **RLS Verifier:** Check if the workbook connects to a sensitive datasource but *lacks* a User Filter or RLS calculation.
+45. **Watermark Injector:** Inject a transparent background image object containing "CONFIDENTIAL" into the XML of every dashboard layer.
+46. **Web Object Whitelister:** Scan for "Web Page" objects and extract the URLs to ensure no one is embedding unapproved or insecure sites (http vs https).
+47. **Extract Encryption Checker:** (Server API) Audit all published data sources to ensure "Encryption at Rest" is enabled.
+
+### 🔄 DevOps & Version Control
+48. **XML Diff / Change Log:** Compare the XML of `Sales_Dashboard_v1.twb` and `Sales_Dashboard_v2.twb` to generate a readable text report of exactly what changed (e.g., "Changed Color on Sheet 1", "Modified Calculation X").
+49. **Logic Patcher:** You discovered a bug in a calculation used in 20 different workbooks. Write a script to find that specific formula string and replace it with the corrected one across all 20 files.
+50. **Data Type Enforcer:** Ensure that specific fields (e.g., "Customer ID") are always set to `String` (to prevent commas) and not `Integer` in the metadata.
+51. **Workbook Splitter:** Take a massive workbook with 50 dashboards and split it into 5 separate `.twb` files (Sales, HR, Marketing) by parsing and migrating specific `<dashboard>` and `<worksheet>` tags.
+52. **Template Injector:** Insert a standard "Header" and "Footer" container (with copyright and logo) into a blank workbook to create a "Starter Template" automatically.
+
+### 📊 Data Source Management
+53. **Description Propagator:** Connect to your Data Warehouse (Snowflake/BigQuery) to get column descriptions, then inject them into the Tableau Field `description` tag so users see tooltips on hover in the Data Pane.
+54. **Extract Filter auditor:** List all "Extract Filters" hidden in the XML to ensure you aren't accidentally excluding data at the connection level.
+55. **Join Type Auditor:** Report on whether connections are using Inner, Left, or Right joins (often hidden in the UI until you check the Logical Layer).
+56. **Unused Column Hider:** Analyze the usage of columns and modify the XML `<connection>` settings to "Hide" unused columns before creating an extract (improves performance).
+57. **Relationship Nudger:** (Advanced) Modify the "Performance Options" in the Logical Data Model (Relationships) from "Many-to-Many" to "One-to-Many" if you know the cardinality, improving query speed.
+
+### 🤖 Server & User Automation (Tableau Server Client - TSC)
+58. **The "Stale User" Booter:** List users who haven't logged in for 90 days and automatically unlicensed them to save seat costs.
+59. **Subscription Cloner:** Copy all email subscriptions from one workbook to another (useful when replacing a report with a V2 version).
+60. **Tag Manager:** Bulk apply tags (e.g., "Certified", "Finance") to all workbooks in a specific project.
+61. **Extract Failure Pattern Detector:** Query the "Background Tasks" to find extracts that fail specifically on "Mondays" or "at 9 AM" to identify resource contention.
+62. **Group Sync:** Script a sync between an internal API (HR system) and Tableau Server Groups if Active Directory isn't available.
+63. **View Count Resetter:** (Hack) Re-publish a workbook with a slightly different name and delete the old one to "reset" view counts for a fresh launch.
+64. **Permission Auditor:** Generate a matrix (CSV) showing `User | Workbook | Permission Level` for an audit.
+65. **Custom View Deleter:** Delete all user-created "Custom Views" on a dashboard that are older than 1 year to declutter the server.
+66. **Owner Changer:** Bulk update the "Owner" of 100 workbooks from "Employee A" (who left) to "Employee B".
+67. **Thumbnail Generator:** Download the preview image of every dashboard via API to display in a custom internal company portal.
+
+### 🎨 Advanced UX Hacking
+68. **Filter Scope Enforcer:** Find all filters on a dashboard and change their scope from "Only This Sheet" to "All Using This Data Source" in the XML.
+69. **Navigation Button Styler:** Find all "Navigation" buttons and enforce a specific border radius, background color, and font style.
+70. **URL Action Validator:** Extract all URL actions and run a Python `requests.get()` on them to ensure they don't return 404 errors.
+71. **Dashboard Size Standardizer:** Identify dashboards set to "Range" and force them to "Fixed Size" (e.g., 1600x900) to ensure rendering speed.
+72. **Floating Object "Snapper":** Round the X, Y, W, H coordinates of all floating objects to the nearest 10 pixels to make them look perfectly aligned on a grid.
+73. **Transparent Sheet Maker:** Bulk set the background color of all worksheets to `None` (Transparent) to allow dashboard background images to show through.
+
+### 🧪 Testing & QA
+74. **Filter Combination Tester:** Use Selenium + Python to open the dashboard in a browser and cycle through every filter combination to check for "No Data" blank screens.
+75. **Performance Recording Parser:** specific Automate the parsing of Tableau Performance Recording workbooks to identify the slowest query without opening the file manually.
+76. **Alert Threshold Checker:** Scan the XML for Data Driven Alerts and report what the threshold values are (e.g., "Alert if Sales < 5000").
+77. **Empty Dashboard Detector:** Identify dashboards that have no sheets on them (work in progress) and flag them.
+78. **Spelling Checker:** Extract all text from Text Objects and Titles, run a Python spell check, and report typos.
+
+### 🛠 Specific Weird Fixes
+79. **"Automatic" Font Fixer:** Find any text formatted as "Automatic" color (which can appear black or white depending on background) and force it to a specific HEX code.
+80. **Workbook Version Downgrader:** Script the hack to change the XML build version header so a newer workbook opens in an older Tableau Desktop (with risks).
