@@ -1,3 +1,17 @@
+> [!WARNING]
+> **What You CANNOT Do with XML Hacking**
+>
+> While powerful, there are limits:
+>
+> 1. **Creating Charts from Scratch**  
+>    You can’t write a script to “make a bar chart.” The XML that defines marks, encodings, and pill arrangements is deeply complex and encoded. Modifying existing visuals is far safer than creating new ones.
+>
+> 2. **Generating Extracts**  
+>    You cannot create `.hyper` data files by editing XML. The workbook XML only references the extract file location.
+>
+> 3. **Complex Logic Changes**  
+>    Changing UI behavior such as converting a *Single Select Dropdown* into a *Multiple Values Slider* requires modifying multiple nested tags. This is usually faster and safer to do in Tableau Desktop.
+
 ### 1. Global Branding & Formatting (The "Rebranding" Nightmare)
 If your company changes its logo or color palette, updating 50 dashboards manually is painful.
 *   **Mass Color Replacement:**
@@ -69,19 +83,6 @@ if __name__ == "__main__":
     mass_color_replace()
 ```
 
-> [!WARNING]
-> **What You CANNOT Do with XML Hacking**
->
-> While powerful, there are limits:
->
-> 1. **Creating Charts from Scratch**  
->    You can’t write a script to “make a bar chart.” The XML that defines marks, encodings, and pill arrangements is deeply complex and encoded. Modifying existing visuals is far safer than creating new ones.
->
-> 2. **Generating Extracts**  
->    You cannot create `.hyper` data files by editing XML. The workbook XML only references the extract file location.
->
-> 3. **Complex Logic Changes**  
->    Changing UI behavior such as converting a *Single Select Dropdown* into a *Multiple Values Slider* requires modifying multiple nested tags. This is usually faster and safer to do in Tableau Desktop.
 
 
 > [!NOTE]
