@@ -75,12 +75,9 @@ While powerful, there are limits:
 2.  **Generating Extracts:** You cannot create the `.hyper` data file by editing XML. The XML only points to the file location.
 3.  **Complex Logic Changes:** Changing a filter from a "Single Select Dropdown" to a "Multiple Values Slider" involves changing multiple nested tags. It's usually easier to do this in the UI.
 
-### Summary Strategy
-If you have to do something **once**, use the Tableau UI.
-If you have to do something **50 times** (like aligning 50 icons, renaming 50 fields, or changing 50 colors), **use Python and XML.**
-
-
-Here are **30 unique use cases** for Tableau XML/Python automation, categorized by what they help you achieve. We can pick any of these to build a script for together.
+>[!Note]Summary Strategy
+>If you have to do something **once**, use the Tableau UI.
+>If you have to do something **50 times** (like aligning 50 icons, renaming 50 fields, or changing 50 colors), **use Python and XML.**
 
 ### Formatting & Visual Consistency ( The "Pixel Perfect" Scripts)
 1.  **The "Padding Police":** Scan every container and object in the workbook and force **Outer Padding** to 0 and **Inner Padding** to 4 (or your standard) to remove unwanted whitespace.
@@ -125,14 +122,6 @@ Here are **30 unique use cases** for Tableau XML/Python automation, categorized 
 ### Workflow Automations
 29. **Sheet Un-hider:** Instantly unhide every sheet in the workbook (useful for debugging someone else's messy workbook).
 30. **Action Auditor:** List all Dashboard Actions (Filters, URL actions) and their source/target sheets to visualize the navigation flow.
-
-***
-
-**Which one of these sounds most painful for you right now?** Pick one, and we can write the Python script for it immediately.
-
-Here are **50 additional, unique, and high-value** use cases for Tableau automation with Python.
-
-I have categorized these by the specific "pain point" they solve in a real-world analytics environment.
 
 ### Clean-Up & Optimization (The "Janitor" Scripts)
 31. **The "Phone Layout" Destroyer:** Automatically delete the auto-generated "Phone" and "Tablet" layouts from every dashboard in the XML (these often break the design and are tedious to delete manually).
