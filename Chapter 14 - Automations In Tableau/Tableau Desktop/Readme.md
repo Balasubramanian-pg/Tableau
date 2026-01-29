@@ -69,11 +69,20 @@ if __name__ == "__main__":
     mass_color_replace()
 ```
 
-### What you CANNOT do with XML Hacking
-While powerful, there are limits:
-1.  **Creating Charts from Scratch:** You can't write a script to "Make me a Bar Chart." The XML defining a visualization's marks, encodings, and pill arrangements is incredibly complex and encoded. It's better to modify existing visuals than create new ones.
-2.  **Generating Extracts:** You cannot create the `.hyper` data file by editing XML. The XML only points to the file location.
-3.  **Complex Logic Changes:** Changing a filter from a "Single Select Dropdown" to a "Multiple Values Slider" involves changing multiple nested tags. It's usually easier to do this in the UI.
+> [!WARNING]
+> **What You CANNOT Do with XML Hacking**
+>
+> While powerful, there are limits:
+>
+> 1. **Creating Charts from Scratch**  
+>    You can’t write a script to “make a bar chart.” The XML that defines marks, encodings, and pill arrangements is deeply complex and encoded. Modifying existing visuals is far safer than creating new ones.
+>
+> 2. **Generating Extracts**  
+>    You cannot create `.hyper` data files by editing XML. The workbook XML only references the extract file location.
+>
+> 3. **Complex Logic Changes**  
+>    Changing UI behavior such as converting a *Single Select Dropdown* into a *Multiple Values Slider* requires modifying multiple nested tags. This is usually faster and safer to do in Tableau Desktop.
+
 
 > [!NOTE]
 > **Summary Strategy**
