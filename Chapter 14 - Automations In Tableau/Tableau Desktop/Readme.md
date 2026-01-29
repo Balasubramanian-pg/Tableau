@@ -75,7 +75,7 @@ While powerful, there are limits:
 2.  **Generating Extracts:** You cannot create the `.hyper` data file by editing XML. The XML only points to the file location.
 3.  **Complex Logic Changes:** Changing a filter from a "Single Select Dropdown" to a "Multiple Values Slider" involves changing multiple nested tags. It's usually easier to do this in the UI.
 
->[!Note]Summary Strategy
+>[!Note] Summary Strategy
 >If you have to do something **once**, use the Tableau UI.
 >If you have to do something **50 times** (like aligning 50 icons, renaming 50 fields, or changing 50 colors), **use Python and XML.**
 
