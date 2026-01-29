@@ -75,9 +75,12 @@ While powerful, there are limits:
 2.  **Generating Extracts:** You cannot create the `.hyper` data file by editing XML. The XML only points to the file location.
 3.  **Complex Logic Changes:** Changing a filter from a "Single Select Dropdown" to a "Multiple Values Slider" involves changing multiple nested tags. It's usually easier to do this in the UI.
 
->[!Note] Summary Strategy
->If you have to do something **once**, use the Tableau UI.
->If you have to do something **50 times** (like aligning 50 icons, renaming 50 fields, or changing 50 colors), **use Python and XML.**
+> [!NOTE]
+> **Summary Strategy**
+>
+> If you have to do something **once**, use the Tableau UI.  
+> If you have to do something **50 times** (like aligning 50 icons, renaming 50 fields, or changing 50 colors), **use Python and XML**.
+
 
 ### Formatting & Visual Consistency ( The "Pixel Perfect" Scripts)
 1.  **The "Padding Police":** Scan every container and object in the workbook and force **Outer Padding** to 0 and **Inner Padding** to 4 (or your standard) to remove unwanted whitespace.
