@@ -1,7 +1,3 @@
-You have just unlocked a "superpower" in Tableau development. Because `.twb` files are just text (XML), **anything** you can do with "Find and Replace" or "RegEx" in Python can be automated.
-
-Here are the most powerful automations you can build by hacking the XML, grouped by use case:
-
 ### 1. Global Branding & Formatting (The "Rebranding" Nightmare)
 If your company changes its logo or color palette, updating 50 dashboards manually is painful.
 *   **Mass Color Replacement:**
