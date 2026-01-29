@@ -15,45 +15,46 @@ Tableau Desktop Automations You Can Do
 > 3. **Complex Logic Changes**  
 >    Changing UI behavior such as converting a *Single Select Dropdown* into a *Multiple Values Slider* requires modifying multiple nested tags. This is usually faster and safer to do in Tableau Desktop.
 
-### 1. Global Branding & Formatting (The "Rebranding" Nightmare)
-If your company changes its logo or color palette, updating 50 dashboards manually is painful.
-*   **Mass Color Replacement:**
-    *   **The Problem:** You used a specific Blue `#1F77B4` in 100 different sheets, titles, and backgrounds.
-    *   **The XML Hack:** Write a script to scan the XML for that specific HEX code and replace it with the new Brand Red `#E15759`.
-*   **Font Standardization:**
-    *   **The XML Hack:** Search for `font-family='Arial'` and replace it with `font-family='Tableau Book'` globally to ensure consistency, even in tooltips and titles where you might have missed it.
-*   **Logo Swapping (Image Objects):**
-    *   **The XML Hack:** Find all `<zone>` tags that are `type='bitmap'`. If the `param` (file path) points to `old_logo.png`, swap the string to `new_logo.png`.
+### Formatting & Visual Consistency (The "Rebranding" Scripts)
 
-### 2. Mass Content Editing (The "Click-Heavy" Tasks)
-*   **Bulk Tooltip Updates:**
-    *   **The Scenario:** Legal demands you add a disclaimer *"Data is subject to change"* to the bottom of **every** tooltip in the workbook.
-    *   **The XML Hack:** iterate through `<worksheet>` -> `<table>` -> `<view>` -> `<tooltip>`. Append your text string to the existing text in the XML.
-*   **Standardizing Titles:**
-    *   **The Scenario:** You want every sheet title to be centered and size 14.
-    *   **The XML Hack:** Find the `<layout-options>` tag inside worksheets and enforce the specific XML attributes for alignment and font size.
-*   **Unhide All Sheets:**
-    *   **The Scenario:** You inherited a workbook where the previous developer hid 50 sheets and you need to audit them.
-    *   **The XML Hack:** Find all tags saying `paged='false'` (which often indicates a hidden sheet in certain contexts) or modify the `<window>` settings to unhide them all instantly.
+1. **Mass Color Replacement**
+   Scan the entire workbook XML and replace a specific HEX color value (for example `#1F77B4`) with a new brand color (for example `#E15759`) across sheets, titles, backgrounds, borders, and text.
 
-### 3. Data & Calculation Management
-*   **Extracting Calculated Fields (Documentation):**
-    *   **The Scenario:** You need a data dictionary of all custom formulas.
-    *   **The XML Hack:** Parse `<column>` tags. Look for attributes containing `caption` (the name) and the inner text (the formula). Script this to export a CSV: `Field Name | Formula`.
-*   **Hardcoded SQL Updates:**
-    *   **The Scenario:** You use "Custom SQL" and the table name changed from `SALES_2023` to `SALES_2024`.
-    *   **The XML Hack:** Instead of opening every connection in the UI, find the `<relation connection='...' type='text'>` tag and perform a string replace on the SQL query inside.
-*   **Removing "Copy" and "1":**
-    *   **The Scenario:** You duplicated a bunch of fields and now have `Sales (copy)` and `Profit 1`.
-    *   **The XML Hack:** Regex search through `<column>` captions to find strings ending in `(copy)` or ` 1` and strip those characters out.
+2. **Global Font Standardizer**
+   Replace all instances of a font family (for example `Arial`) with a standard corporate font (for example `Tableau Book`) to enforce consistency across titles, tooltips, axes, and text objects.
 
-### 4. QA & Governance (The "Detective" Work)
-*   **Find Hardcoded Filters:**
-    *   **The Scenario:** Did a developer hardcode "Select User = 'Steve'" in a filter instead of using the proper security group?
-    *   **The XML Hack:** Scan the `<filter>` tags. If you see a filter that isn't a simple "include/exclude" list but contains specific hardcoded strings that shouldn't be there, flag it.
-*   **Broken Reference Checker:**
-    *   **The Scenario:** Calculated fields with red exclamation marks `[Calculation_458230948]`.
-    *   **The XML Hack:** Search for field references that point to IDs that no longer exist in the `<datasources>` section.
+3. **Logo Swapper (Image Objects)**
+   Locate all image zones (`type='bitmap'`) in dashboards and update the referenced file path so `old_logo.png` is replaced with `new_logo.png` everywhere.
+
+### Content & Text Management (The "Click-Heavy" Scripts)
+
+4. **Bulk Tooltip Disclaimer Injector**
+   Append a standardized disclaimer such as *“Data is subject to change”* to the bottom of every tooltip by modifying tooltip XML definitions at scale.
+
+5. **Title Format Enforcer**
+   Standardize all worksheet titles by forcing center alignment and a specific font size (for example size 14) via worksheet layout metadata.
+
+6. **Sheet Unhider**
+   Instantly unhide every worksheet in the workbook by updating visibility or window-related XML attributes, making inherited workbooks easy to audit.
+
+### Data & Calculation Management (The "Metadata Cleanup" Scripts)
+
+7. **Calculated Field Extractor**
+   Parse all calculated fields from `<column>` tags and export their names and formulas into a CSV to generate a complete data dictionary.
+
+8. **Custom SQL Updater**
+   Locate Custom SQL definitions in text-based relations and perform controlled string replacements, such as updating table names from `SALES_2023` to `SALES_2024`.
+
+9. **Duplicate Field Name Cleaner**
+   Remove suffixes like `(copy)` or numeric endings such as ` 1` from duplicated field names using regex-based caption cleanup.
+
+### QA & Governance (The "Detective" Scripts)
+
+10. **Hardcoded Filter Scanner**
+    Scan filter definitions to detect suspicious hardcoded values, such as specific usernames, and flag them for security or governance review.
+
+11. **Broken Reference Checker**
+    Identify calculated fields referencing non-existent datasource IDs and report sheets affected by broken calculations (red exclamation marks).
 
 ### Example: The "Mass Color Swapper" Script
 Here is a script that replaces one color with another across the entire workbook (borders, fonts, backgrounds, everything).
