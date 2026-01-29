@@ -205,6 +205,6 @@ if __name__ == "__main__":
 77. **Empty Dashboard Detector:** Identify dashboards that have no sheets on them (work in progress) and flag them.
 78. **Spelling Checker:** Extract all text from Text Objects and Titles, run a Python spell check, and report typos.
 
-### 🛠 Specific Weird Fixes
+### Specific Weird Fixes
 79. **"Automatic" Font Fixer:** Find any text formatted as "Automatic" color (which can appear black or white depending on background) and force it to a specific HEX code.
 80. **Workbook Version Downgrader:** Script the hack to change the XML build version header so a newer workbook opens in an older Tableau Desktop (with risks).
