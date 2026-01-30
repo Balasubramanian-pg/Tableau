@@ -1,0 +1,69 @@
+# Standard Operating Procedure: Tableau Row-Level Security (RLS)
+
+**Document ID:** TAB-SEC-001
+**Topic:** Implementing User-Based Row-Level Security via Groups
+**Objective:** Restrict dashboard data visibility so users only see data relevant to their specific region or department.
+
+## 1. Prerequisites & Scenario
+**Scenario:** We have a Sales Dashboard.
+*   **Data Field:** `[Region]` (Values: 'North', 'South').
+*   **Requirement:**
+    *   The **"Sales - North"** group should only see 'North' data.
+    *   The **"Sales - South"** group should only see 'South' data.
+    *   The **"Executive Leadership"** group should see **all** data.
+
+## 2. Server-Side Configuration
+*Perform these steps in Tableau Server or Tableau Cloud.*
+
+1.  Navigate to **Explore** > **Groups**.
+2.  Click **New Group** and create the following groups:
+    *   `Sales - North`
+    *   `Sales - South`
+    *   `Executive Leadership`
+3.  Select a group name, click **Add Users**, and assign the appropriate specific personnel to each group.
+
+## 3. Desktop Implementation
+*Perform these steps in Tableau Desktop.*
+
+### Step A: Connect and Verify Data
+1.  Open Tableau Desktop and connect to the Sales Data Source.
+2.  Locate the dimension you wish to filter by (e.g., `[Region]`).
+
+### Step B: Create the Security Logic
+1.  Go to **Analysis** > **Create Calculated Field**.
+2.  Name the field: `!User Security Filter`.
+3.  Enter the following logic into the calculation editor:
+
+```tableau
+// 1. Allow Executives to see everything
+ISMEMBEROF('Executive Leadership')
+
+OR
+
+// 2. Map groups to specific data values
+(ISMEMBEROF('Sales - North') AND [Region] = 'North')
+OR
+(ISMEMBEROF('Sales - South') AND [Region] = 'South')
+```
+*Note: This calculation returns a Boolean (True/False).*
+
+### Step C: Apply the Global Filter
+1.  Navigate to a Worksheet.
+2.  Drag the `!User Security Filter` field to the **Filters Shelf**.
+3.  In the pop-up dialog, select **True**.
+4.  Click **OK**.
+5.  **Crucial Step:** Right-click the pill in the Filters Shelf and select **Apply to Worksheets** > **All Using This Data Source**.
+    *   *This ensures the security logic applies to every chart built on this dataset.*
+
+## 4. Testing & Validation
+*Never publish without testing user views.*
+
+1.  In Tableau Desktop, look at the bottom right corner of the window.
+2.  Click the **Filter as User** icon (looks like a user silhouette).
+3.  Search for a specific user (e.g., a member of the North team).
+4.  **Verify:** The dashboard should visually update to show only 'North' data.
+5.  Switch back to your account (Reset) to finish.
+
+## 5. Deployment
+1.  **Publish** the workbook to Tableau Server/Cloud.
+2.  Ensure the **Generate Thumbnails as User** option is set to your own account (or a generic view) so sensitive data isn't visible in the thumbnail preview.
