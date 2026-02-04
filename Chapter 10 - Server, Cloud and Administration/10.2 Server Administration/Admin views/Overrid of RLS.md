@@ -28,10 +28,10 @@ flowchart TD
     classDef nation fill:#d1e7dd,stroke:#0f5132,stroke-width:2px;
     classDef region fill:#fff3cd,stroke:#856404,stroke-width:2px;
     classDef terr fill:#f8d7da,stroke:#842029,stroke-width:2px;
-    classDef hidden fill:#e2e3e5,stroke:#6c757d,stroke-dasharray: 5 5,color:#6c757d;
 
     %% User Inputs
     subgraph Users [" USER GROUPS "]
+        direction TB
         N_User([🟢 Nation User]):::nation
         R_User([🟡 Region User]):::region
         T_User([🔴 Territory User]):::terr
@@ -43,7 +43,7 @@ flowchart TD
         DataCheck{Check Data<br/>Rule}
     end
 
-    %% Connections to Logic
+    %% Connections
     N_User --> NavCheck
     R_User --> NavCheck
     T_User --> NavCheck
@@ -53,22 +53,22 @@ flowchart TD
     %% NATION OUTPUT
     subgraph NationOutput [" 🟢 NATION USER EXPERIENCE "]
         direction TB
-        N_Nav[<b>NAVIGATION BAR</b><br/>[Link] Landing Page<br/>[Link] Digital Marketing<br/>[Link] Rep Activity<br/>[Link] Customer 360<br/>[Link] Campaign Perf<br/>[Link] Other Dash 1 & 2]:::nation
-        N_Data[<b>DATA VISIBILITY</b><br/>SCOPE: 100% Full Data<br/>(Override Enabled)]:::nation
+        N_Nav["<b>NAVIGATION BAR</b><br/>• Landing Page<br/>• Digital Marketing<br/>• Rep Activity<br/>• Customer 360<br/>• Campaign Perf<br/>• Other Dash 1 & 2"]:::nation
+        N_Data["<b>DATA VISIBILITY</b><br/>SCOPE: 100% Full Data<br/>(Override Enabled)"]:::nation
     end
 
     %% REGION OUTPUT
     subgraph RegionOutput [" 🟡 REGION USER EXPERIENCE "]
         direction TB
-        R_Nav[<b>NAVIGATION BAR</b><br/>[Link] Landing Page<br/>[Link] Digital Marketing<br/>[Link] Rep Activity<br/>[Link] Other Dash 1 & 2<br/><span style='text-decoration:line-through'>[HIDDEN] Customer 360</span><br/><span style='text-decoration:line-through'>[HIDDEN] Campaign Perf</span>]:::region
-        R_Data[<b>DATA VISIBILITY</b><br/>SCOPE: Regional Data Only<br/>(e.g., Just 'East' rows)]:::region
+        R_Nav["<b>NAVIGATION BAR</b><br/>• Landing Page<br/>• Digital Marketing<br/>• Rep Activity<br/>• Other Dash 1 & 2<br/><span style='text-decoration:line-through; color:gray'>x Customer 360 (Hidden)</span><br/><span style='text-decoration:line-through; color:gray'>x Campaign Perf (Hidden)</span>"]:::region
+        R_Data["<b>DATA VISIBILITY</b><br/>SCOPE: Regional Data Only<br/>(e.g., Just 'East' rows)"]:::region
     end
 
     %% TERRITORY OUTPUT
     subgraph TerritoryOutput [" 🔴 TERRITORY USER EXPERIENCE "]
         direction TB
-        T_Nav[<b>NAVIGATION BAR</b><br/>[Link] Landing Page<br/>[Link] Digital Marketing<br/>[Link] Rep Activity<br/><span style='text-decoration:line-through'>[HIDDEN] Customer 360</span><br/><span style='text-decoration:line-through'>[HIDDEN] Campaign Perf</span><br/><span style='text-decoration:line-through'>[HIDDEN] Other Dash 1 & 2</span>]:::terr
-        T_Data[<b>DATA VISIBILITY</b><br/>SCOPE: Territory Data Only<br/>(e.g., Just 'New York' rows)]:::terr
+        T_Nav["<b>NAVIGATION BAR</b><br/>• Landing Page<br/>• Digital Marketing<br/>• Rep Activity<br/><span style='text-decoration:line-through; color:gray'>x Customer 360 (Hidden)</span><br/><span style='text-decoration:line-through; color:gray'>x Campaign Perf (Hidden)</span><br/><span style='text-decoration:line-through; color:gray'>x Other Dash 1 & 2 (Hidden)</span>"]:::terr
+        T_Data["<b>DATA VISIBILITY</b><br/>SCOPE: Territory Data Only<br/>(e.g., Just 'New York' rows)"]:::terr
     end
 
     %% Final Mapping
