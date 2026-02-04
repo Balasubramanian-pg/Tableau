@@ -23,51 +23,61 @@ We are building a security system that works like **Key Cards** in a secure offi
 This diagram illustrates exactly what happens when each user logs in. Notice how the **Nation User** path bypasses the filtering logic ("The Override").
 
 ```mermaid
-graph TD
+flowchart TD
     %% Define Styles
-    classDef nation fill:#d4edda,stroke:#155724,stroke-width:2px;
+    classDef nation fill:#d1e7dd,stroke:#0f5132,stroke-width:2px;
     classDef region fill:#fff3cd,stroke:#856404,stroke-width:2px;
-    classDef terr fill:#f8d7da,stroke:#721c24,stroke-width:2px;
-    classDef logic fill:#e2e3e5,stroke:#333,stroke-dasharray: 5 5;
+    classDef terr fill:#f8d7da,stroke:#842029,stroke-width:2px;
+    classDef hidden fill:#e2e3e5,stroke:#6c757d,stroke-dasharray: 5 5,color:#6c757d;
 
-    %% Nodes
-    subgraph Login ["Step 1: User Logs In"]
-        N_User((Nation User)):::nation
-        R_User((Region User)):::region
-        T_User((Territory User)):::terr
+    %% User Inputs
+    subgraph Users [" USER GROUPS "]
+        N_User([🟢 Nation User]):::nation
+        R_User([🟡 Region User]):::region
+        T_User([🔴 Territory User]):::terr
     end
 
-    subgraph NavLogic ["Step 2: Navigation Check (Can they see the button?)"]
-        N_Nav[Logic: Is Nation Group?]
-        R_Nav[Logic: Is Region Group?]
-        T_Nav[Logic: Is Territory Group?]
+    %% Logic Layer
+    subgraph Logic [" SYSTEM LOGIC "]
+        NavCheck{Check Group<br/>Permission}
+        DataCheck{Check Data<br/>Rule}
     end
 
-    subgraph DataLogic ["Step 3: RLS Data Check (What rows do they see?)"]
-        Override{<b>OVERRIDE TRIGGERED</b><br/>Ignore Data Filters}
-        RegFilter{Filter Data:<br/>Region = User Region}
-        TerrFilter{Filter Data:<br/>Territory = User Territory}
+    %% Connections to Logic
+    N_User --> NavCheck
+    R_User --> NavCheck
+    T_User --> NavCheck
+    
+    NavCheck --> DataCheck
+
+    %% NATION OUTPUT
+    subgraph NationOutput [" 🟢 NATION USER EXPERIENCE "]
+        direction TB
+        N_Nav[<b>NAVIGATION BAR</b><br/>[Link] Landing Page<br/>[Link] Digital Marketing<br/>[Link] Rep Activity<br/>[Link] Customer 360<br/>[Link] Campaign Perf<br/>[Link] Other Dash 1 & 2]:::nation
+        N_Data[<b>DATA VISIBILITY</b><br/>SCOPE: 100% Full Data<br/>(Override Enabled)]:::nation
     end
 
-    subgraph Output ["Step 4: The Final View"]
-        N_View[<b>VIEW: FULL VISIBILITY</b><br/>- See ALL 6 Dashboards<br/>- See ALL Data Rows (National)]:::nation
-        R_View[<b>VIEW: PARTIAL</b><br/>- See 4 Dashboards (No C360)<br/>- See ONLY Region Data]:::region
-        T_View[<b>VIEW: RESTRICTED</b><br/>- See 2 Dashboards (Basic Only)<br/>- See ONLY Territory Data]:::terr
+    %% REGION OUTPUT
+    subgraph RegionOutput [" 🟡 REGION USER EXPERIENCE "]
+        direction TB
+        R_Nav[<b>NAVIGATION BAR</b><br/>[Link] Landing Page<br/>[Link] Digital Marketing<br/>[Link] Rep Activity<br/>[Link] Other Dash 1 & 2<br/><span style='text-decoration:line-through'>[HIDDEN] Customer 360</span><br/><span style='text-decoration:line-through'>[HIDDEN] Campaign Perf</span>]:::region
+        R_Data[<b>DATA VISIBILITY</b><br/>SCOPE: Regional Data Only<br/>(e.g., Just 'East' rows)]:::region
     end
 
-    %% Connections for Nation (The Override)
-    N_User --> N_Nav
-    N_Nav -- Yes --> Override
-    Override --> N_View
+    %% TERRITORY OUTPUT
+    subgraph TerritoryOutput [" 🔴 TERRITORY USER EXPERIENCE "]
+        direction TB
+        T_Nav[<b>NAVIGATION BAR</b><br/>[Link] Landing Page<br/>[Link] Digital Marketing<br/>[Link] Rep Activity<br/><span style='text-decoration:line-through'>[HIDDEN] Customer 360</span><br/><span style='text-decoration:line-through'>[HIDDEN] Campaign Perf</span><br/><span style='text-decoration:line-through'>[HIDDEN] Other Dash 1 & 2</span>]:::terr
+        T_Data[<b>DATA VISIBILITY</b><br/>SCOPE: Territory Data Only<br/>(e.g., Just 'New York' rows)]:::terr
+    end
 
-    %% Connections for Region
-    R_User --> R_Nav
-    R_Nav -- Yes --> RegFilter
-    RegFilter --> R_View
-
-    %% Connections for Territory
-    T_User --> T_Nav
-    T_Nav -- Yes --> TerrFilter
-    TerrFilter --> T_View
-
+    %% Final Mapping
+    DataCheck -- "If Nation" --> N_Nav
+    N_Nav --- N_Data
+    
+    DataCheck -- "If Region" --> R_Nav
+    R_Nav --- R_Data
+    
+    DataCheck -- "If Territory" --> T_Nav
+    T_Nav --- T_Data
 ```
