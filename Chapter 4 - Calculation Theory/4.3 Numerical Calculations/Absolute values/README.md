@@ -147,6 +147,5 @@ The absolute value of zero is defined to be zero. This edge case is important to
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of absolute values, including their definition, properties, and applications. It serves as a stable reference for understanding and working with absolute values in various contexts.
