@@ -128,5 +128,3 @@ Related topics include query optimization, database design, and data retrieval t
 | Version | Date | Description |
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
-
----
