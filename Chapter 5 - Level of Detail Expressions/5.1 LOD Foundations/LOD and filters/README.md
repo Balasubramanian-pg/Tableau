@@ -150,6 +150,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to LOD and filters, covering the conceptual model, terminology, core concepts, standard model, common patterns, anti-patterns, edge cases, and related topics. The references provided are authoritative and informative, supporting the concepts and ideas presented in this document.
