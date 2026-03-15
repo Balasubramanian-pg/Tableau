@@ -140,6 +140,5 @@ Related topics to FIXED for normalization include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive guide to FIXED for normalization, covering the conceptual model, terminology, constraints, and standard usage patterns. It is intended to serve as a stable reference for developers, architects, and technical professionals working with numerical data.
