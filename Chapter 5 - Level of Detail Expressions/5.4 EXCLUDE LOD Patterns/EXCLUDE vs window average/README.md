@@ -129,6 +129,5 @@ Related topics include data preprocessing, statistical analysis, signal processi
 | 1.1 | 2026-02-15 | Added section on common patterns and anti-patterns |
 | 1.2 | 2026-03-01 | Updated references to include more recent publications |
 
----
 
 This documentation is intended to serve as a comprehensive and authoritative guide to the concepts of EXCLUDE vs window average, providing a foundation for understanding and applying these techniques in data analysis and related fields.
