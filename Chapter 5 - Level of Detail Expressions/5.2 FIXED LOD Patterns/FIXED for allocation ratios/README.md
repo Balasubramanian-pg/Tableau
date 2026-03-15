@@ -139,5 +139,3 @@ Edge cases, such as market crashes or black swan events, can challenge the stand
 | Version | Date | Description |
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
-
----
