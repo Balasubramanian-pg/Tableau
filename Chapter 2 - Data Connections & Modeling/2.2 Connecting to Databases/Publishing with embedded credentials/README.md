@@ -138,6 +138,5 @@ Edge cases include scenarios where the standard model may not apply, such as:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of publishing with embedded credentials, covering the conceptual model, terminology, core concepts, standard model, common patterns, anti-patterns, edge cases, and related topics. It serves as a stable reference for understanding and implementing secure practices for publishing sensitive information.
