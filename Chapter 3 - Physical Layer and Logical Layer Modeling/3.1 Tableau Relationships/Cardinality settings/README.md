@@ -136,6 +136,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 Note: The references provided are a mix of academic papers, books, and online resources, and are intended to provide a solid foundation for understanding cardinality settings.
