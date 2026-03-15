@@ -139,6 +139,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is based on the provided structure and is intended to serve as a comprehensive and authoritative reference for Excel engine limitations.
