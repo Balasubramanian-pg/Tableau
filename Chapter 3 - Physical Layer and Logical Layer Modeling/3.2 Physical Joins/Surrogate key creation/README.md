@@ -154,6 +154,5 @@ The following authoritative external references substantiate or inform this topi
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive guide to surrogate key creation, covering the conceptual model, terminology, and standard usage patterns. It is intended to serve as a stable reference for developers, database administrators, and data architects.
