@@ -149,6 +149,5 @@ The following properties must always hold true:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of using IIF vs IF, including conceptual differences, usage patterns, and best practices. By following the guidelines and recommendations outlined in this document, developers and data analysts can ensure correct and efficient use of conditional logic in their applications.
