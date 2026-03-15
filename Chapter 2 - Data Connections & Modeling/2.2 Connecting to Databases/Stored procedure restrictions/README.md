@@ -157,6 +157,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of stored procedure restrictions, covering conceptual models, terminology, core concepts, and standard practices. It aims to serve as a stable reference for understanding and implementing stored procedure restrictions effectively.
