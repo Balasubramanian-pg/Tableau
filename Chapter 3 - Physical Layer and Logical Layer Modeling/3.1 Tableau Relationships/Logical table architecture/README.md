@@ -139,6 +139,5 @@ Edge cases, such as handling null or missing values, may challenge the standard 
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of logical table architecture, including its conceptual model, terminology, constraints, and standard usage patterns. It serves as a stable reference for data modeling, database design, and data governance, and is intended to be implementation-agnostic and applicable to various database management systems and data storage technologies.
