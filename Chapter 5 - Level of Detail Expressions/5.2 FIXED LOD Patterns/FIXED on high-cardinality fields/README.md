@@ -169,5 +169,3 @@ The following topics are related to FIXED on high-cardinality fields:
 | Version | Date | Description |
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
-
----
