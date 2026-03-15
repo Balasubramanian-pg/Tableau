@@ -136,6 +136,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative reference for join order rules. It provides a conceptual model, terminology, constraints, and standard usage patterns for join order rules, as well as common patterns, anti-patterns, edge cases, and related topics. The references provided are authoritative and informative, and the change log tracks updates to the documentation.
