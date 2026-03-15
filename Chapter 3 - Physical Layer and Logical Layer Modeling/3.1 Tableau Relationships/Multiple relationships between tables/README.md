@@ -153,6 +153,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of multiple relationships between tables, including conceptual modeling, terminology, constraints, and standard usage patterns. It serves as a stable reference for data modeling, relational databases, and database design.
