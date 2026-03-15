@@ -134,6 +134,5 @@ Related topics include query optimization, database normalization, and data ware
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of materialized views in databases, covering their purpose, conceptual model, terminology, core concepts, and standard usage patterns. It also discusses common patterns, anti-patterns, edge cases, and related topics, providing a solid foundation for understanding and working with materialized views in database systems.
