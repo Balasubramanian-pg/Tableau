@@ -152,6 +152,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of OAuth token refresh issues, including the conceptual model, terminology, constraints, and standard usage patterns. It serves as a stable reference for developers, architects, and security professionals working with OAuth-based authentication and authorization systems.
