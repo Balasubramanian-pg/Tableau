@@ -141,6 +141,5 @@ Edge cases, such as handling null or missing values in identity fields, require 
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of identity fields in relationships, covering conceptual models, terminology, core concepts, standard models, common patterns, anti-patterns, edge cases, and related topics. It serves as a stable reference for understanding and applying best practices in data modeling and database design.
