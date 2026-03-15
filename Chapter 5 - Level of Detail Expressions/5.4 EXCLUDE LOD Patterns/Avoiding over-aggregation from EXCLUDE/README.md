@@ -168,6 +168,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive framework for avoiding over-aggregation from EXCLUDE. By following the standard model and best practices outlined in this document, developers and data analysts can ensure accurate and reliable results in their data analysis and processing tasks.
