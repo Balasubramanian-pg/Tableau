@@ -136,6 +136,5 @@ Related topics include data preprocessing, outlier detection, statistical modeli
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of the EXCLUDE for smoothing technique, covering its purpose, conceptual model, terminology, core concepts, standard model, common patterns, anti-patterns, edge cases, and related topics. It serves as a stable reference for understanding and applying this technique in data preprocessing and analysis.
