@@ -157,6 +157,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of extract-only joins, covering their purpose, conceptual model, terminology, core concepts, and standard usage patterns. It serves as a stable reference for understanding and implementing extract-only joins in various data integration and analysis contexts.
