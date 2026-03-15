@@ -145,6 +145,5 @@ Related topics to FIXED LOD Patterns include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and technical guide to FIXED LOD Patterns, covering the conceptual model, terminology, core concepts, standard model, common patterns, anti-patterns, edge cases, and related topics. It provides a stable reference for developers, engineers, and researchers working with 3D graphics and rendering engines.
