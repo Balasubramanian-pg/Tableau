@@ -154,6 +154,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation aims to provide a comprehensive and authoritative guide to Boolean logic as filtering, covering its conceptual model, terminology, core concepts, and standard usage patterns. It is designed to serve as a stable reference for understanding and applying Boolean logic in various contexts.
