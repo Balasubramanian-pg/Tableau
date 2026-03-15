@@ -140,6 +140,5 @@ Edge cases include scenarios where data is partially missing or when there are s
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of FIXED for KPI computation, covering its purpose, conceptual model, terminology, and standard usage patterns. It serves as a stable reference for understanding and implementing FIXED for KPI computation in various contexts.
