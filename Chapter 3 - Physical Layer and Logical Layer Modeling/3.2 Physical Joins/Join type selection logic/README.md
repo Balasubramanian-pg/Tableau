@@ -153,6 +153,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive guide to join type selection logic, covering the conceptual model, terminology, constraints, and standard usage patterns. It provides a stable reference for developers, database administrators, and data analysts to ensure consistent and efficient join type selection in various data processing and analysis tasks.
