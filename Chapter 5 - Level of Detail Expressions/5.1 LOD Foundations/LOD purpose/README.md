@@ -150,6 +150,5 @@ The following references are authoritative and informative:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to LOD purpose, covering the conceptual model, terminology, constraints, and standard usage patterns. It is intended to serve as a stable reference for developers, researchers, and practitioners working with LOD techniques.
