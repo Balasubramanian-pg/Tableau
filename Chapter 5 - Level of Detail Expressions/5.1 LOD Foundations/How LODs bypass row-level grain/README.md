@@ -137,6 +137,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to the topic of how LODs bypass row-level grain. It provides a clear and concise explanation of the conceptual model, terminology, and standard usage patterns, as well as common patterns, anti-patterns, and edge cases. The references provided are authoritative and relevant to the topic, and the change log is maintained to track updates and revisions to the documentation.
