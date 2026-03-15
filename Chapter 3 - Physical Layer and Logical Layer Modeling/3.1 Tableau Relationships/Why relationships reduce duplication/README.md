@@ -152,6 +152,5 @@ The following five authoritative external references substantiate or inform this
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 Note: This documentation is based on general knowledge and principles of data modeling, database design, and data integrity. It is not specific to any particular database management system or programming language.
