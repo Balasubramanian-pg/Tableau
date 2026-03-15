@@ -166,6 +166,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 | 1.1 | 2026-02-15 | Added references to distributed systems and data integration topics |
 | 1.2 | 2026-03-01 | Updated terminology and definitions for clarity and precision |
 
----
 
 This documentation aims to provide a comprehensive and authoritative guide to bridge live query tunneling, covering its conceptual model, core concepts, standard model, and related topics. It is designed to serve as a stable reference for understanding and implementing bridge live query tunneling in various contexts.
