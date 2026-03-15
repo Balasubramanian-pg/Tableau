@@ -161,6 +161,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to Calc editor hints. It provides a detailed overview of the conceptual model, terminology, core concepts, and standard model, as well as common patterns, anti-patterns, and edge cases. The references provided are authoritative and substantiate the information presented in this documentation.
