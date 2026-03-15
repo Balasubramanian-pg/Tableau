@@ -158,6 +158,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of INCLUDE mechanics, covering conceptual foundations, terminology, core concepts, and standard usage patterns. It also addresses common pitfalls, anti-patterns, and edge cases, and provides a list of related topics and authoritative references.
