@@ -159,6 +159,5 @@ The following authoritative external references substantiate or inform this topi
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of encoding problems in CSV files, including the conceptual model, terminology, and standard usage patterns. It also provides guidance on common patterns, anti-patterns, and edge cases, as well as related topics and authoritative references.
