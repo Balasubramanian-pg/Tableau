@@ -138,6 +138,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of multiple connection handling, including its purpose, conceptual model, terminology, and standard usage patterns. It serves as a stable reference for understanding and implementing multiple connection handling in various contexts.
