@@ -132,6 +132,5 @@ The standard model has the following invariants:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive guide to bridge pooling, covering the conceptual model, terminology, constraints, and standard usage patterns. It provides a stable reference for understanding and implementing bridge pooling in various network environments.
