@@ -153,6 +153,5 @@ The following topics are related to live connection query pushing:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of live connection query pushing, including its conceptual model, terminology, constraints, and standard usage patterns. It serves as a stable reference for developers, architects, and technical professionals working with real-time data processing and analysis systems.
