@@ -152,6 +152,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation aims to provide a comprehensive and authoritative guide to nested logical expressions, covering their conceptual model, terminology, core concepts, and standard usage patterns, as well as common patterns, anti-patterns, and edge cases. It is designed to serve as a stable reference for professionals and learners alike, promoting clarity, consistency, and best practices in the use of nested logical expressions across various domains.
