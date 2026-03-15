@@ -154,5 +154,3 @@ The following references are authoritative and informative:
 | Version | Date | Description |
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
-
----
