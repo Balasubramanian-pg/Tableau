@@ -161,6 +161,5 @@ The following five authoritative external references substantiate or inform this
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to INCLUDE for user-level metrics. It provides a conceptual model, terminology, constraints, and standard usage patterns for this topic. The documentation is implementation-agnostic and intended to serve as a stable reference for practitioners and stakeholders.
