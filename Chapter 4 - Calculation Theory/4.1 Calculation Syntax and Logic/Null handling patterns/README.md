@@ -152,6 +152,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of null handling patterns, including their purpose, conceptual model, terminology, and standard usage patterns. It also covers common patterns, anti-patterns, edge cases, and related topics, providing a thorough understanding of null handling in software systems.
