@@ -135,6 +135,5 @@ Edge cases and boundary conditions can challenge the standard model and require 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is subject to change and may not reflect the latest developments or updates. Users should always consult the official BigQuery documentation and pricing information for the most up-to-date information.
