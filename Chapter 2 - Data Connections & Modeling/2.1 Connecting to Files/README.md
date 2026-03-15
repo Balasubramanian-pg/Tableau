@@ -140,6 +140,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and technical guide to connecting to files, covering the conceptual model, terminology, constraints, and standard usage patterns. It provides a stable reference for developers, administrators, and users, and is intended to serve as a foundation for further documentation and development.
