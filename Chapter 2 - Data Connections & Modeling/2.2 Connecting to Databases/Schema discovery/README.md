@@ -158,6 +158,5 @@ Related topics to schema discovery include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to schema discovery, covering its conceptual model, terminology, constraints, and standard usage patterns. It is intended to serve as a stable reference for practitioners, researchers, and organizations involved in data management and data governance.
