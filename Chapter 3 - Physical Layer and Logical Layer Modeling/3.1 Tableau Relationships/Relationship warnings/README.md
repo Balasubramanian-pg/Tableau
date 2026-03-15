@@ -158,6 +158,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 This comprehensive documentation provides a thorough understanding of relationship warnings, including their conceptual model, terminology, constraints, and standard usage patterns. It serves as a stable reference for developers, researchers, and practitioners working with relationship warnings in various contexts.
