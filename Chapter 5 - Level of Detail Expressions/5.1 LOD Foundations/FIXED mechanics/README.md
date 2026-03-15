@@ -161,6 +161,5 @@ The following five authoritative external references substantiate or inform this
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative reference for FIXED mechanics, and it is intended to serve as a stable foundation for further development and refinement.
