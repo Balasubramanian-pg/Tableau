@@ -154,6 +154,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 | 1.1 | 2026-02-15 | Added section on handling missing data in edge cases |
 | 1.2 | 2026-03-01 | Updated references to include more recent publications |
 
----
 
 Note: The change log will continue to be updated as the documentation evolves.
