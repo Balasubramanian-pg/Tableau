@@ -145,6 +145,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive guide to working with TSV, covering the conceptual model, terminology, and standard usage patterns. It is intended to serve as a stable reference for developers, data analysts, and other stakeholders working with TSV data.
