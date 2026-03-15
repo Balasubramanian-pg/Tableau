@@ -148,6 +148,5 @@ The standard model defines several invariants that must always hold true. For ex
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive guide to anti-patterns for joins, covering the conceptual model, terminology, constraints, and standard usage patterns. It provides a stable reference for developers and data professionals to design and implement robust, scalable, and maintainable data integration solutions.
