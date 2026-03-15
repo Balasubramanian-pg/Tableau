@@ -157,6 +157,5 @@ The following authoritative external references substantiate or inform this topi
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive guide to removing special characters, covering the conceptual model, terminology, constraints, and standard usage patterns. It serves as a stable reference for developers, users, and researchers, ensuring that they can effectively manage and process their data.
