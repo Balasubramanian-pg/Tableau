@@ -144,6 +144,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of text field normalization, including its purpose, conceptual model, terminology, and standard usage patterns. It also highlights common patterns, anti-patterns, and edge cases, and provides a list of authoritative references for further reading.
