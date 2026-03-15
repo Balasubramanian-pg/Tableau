@@ -153,6 +153,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of connection pooling behavior, including its purpose, conceptual model, terminology, core concepts, and standard usage patterns. It also covers common patterns, anti-patterns, edge cases, and related topics, and provides authoritative external references to substantiate the information presented.
