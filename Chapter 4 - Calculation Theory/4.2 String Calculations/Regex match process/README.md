@@ -167,6 +167,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative reference for the Regex match process. It provides a detailed overview of the conceptual model, terminology, constraints, and standard usage patterns. The documentation is implementation-agnostic and intended to serve as a stable reference for developers, engineers, and technical professionals.
