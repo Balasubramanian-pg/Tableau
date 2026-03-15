@@ -136,5 +136,3 @@ Related topics include data governance, data quality, and data integration.
 | Version | Date | Description |
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
-
----
