@@ -146,6 +146,5 @@ Related topics include:
 | 1.1 | 2026-02-15 | Added section on edge cases and boundary conditions |
 | 1.2 | 2026-03-01 | Updated references to include more recent publications |
 
----
 
 This documentation is designed to serve as a comprehensive and authoritative guide to Hierarchical EXCLUDE usage, providing a clear understanding of its conceptual model, terminology, constraints, and standard usage patterns. By following this documentation, developers and practitioners can ensure consistent and effective application of Hierarchical EXCLUDE usage in various contexts.
