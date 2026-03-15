@@ -151,6 +151,5 @@ The following authoritative external references substantiate or inform this topi
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of PDF import pitfalls, including the conceptual model, terminology, constraints, and standard usage patterns. It is intended to serve as a stable reference for developers, content creators, and users who work with PDF files.
