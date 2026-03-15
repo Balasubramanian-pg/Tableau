@@ -133,6 +133,5 @@ The following properties must always hold true in the standard model:
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to physical joins, covering the conceptual model, terminology, constraints, and standard usage patterns. It provides a stable reference for developers, database administrators, and data analysts working with database systems.
