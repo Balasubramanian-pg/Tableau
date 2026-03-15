@@ -155,6 +155,5 @@ The following five authoritative external references substantiate or inform this
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive guide to Using CASE appropriately, covering the conceptual model, terminology, constraints, and standard usage patterns. It serves as a stable reference for software development teams, providing a foundation for the effective and efficient use of CASE tools and software development methodologies.
