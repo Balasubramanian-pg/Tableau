@@ -163,6 +163,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive and authoritative guide to header detection logic, covering the conceptual model, terminology, constraints, and standard usage patterns. It serves as a stable reference for implementers, developers, and users of header detection logic, and provides a foundation for further research and development in this area.
