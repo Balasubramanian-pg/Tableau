@@ -169,6 +169,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to the 5.4 EXCLUDE LOD Patterns topic. It provides a clear and concise explanation of the conceptual model, terminology, constraints, and standard usage patterns, as well as common patterns, anti-patterns, and edge cases. The references provided are authoritative and informative, and the change log is maintained to track updates and revisions.
