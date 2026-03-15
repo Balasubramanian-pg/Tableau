@@ -131,6 +131,5 @@ Edge cases, such as objects with highly variable levels of detail or scenes with
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of the 5.3 INCLUDE LOD Patterns topic, including the conceptual model, terminology, constraints, and standard usage patterns. It serves as a stable reference for developers, researchers, and practitioners working with INCLUDE LOD Patterns.
