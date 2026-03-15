@@ -159,6 +159,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of INCLUDE with dimensions vs measures, covering conceptual models, terminology, constraints, and standard usage patterns. It serves as a stable reference for understanding and applying these concepts in data modeling and analysis.
