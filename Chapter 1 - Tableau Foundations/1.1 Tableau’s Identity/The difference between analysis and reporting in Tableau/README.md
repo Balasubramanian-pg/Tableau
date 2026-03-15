@@ -155,4 +155,3 @@ Post June 2024 updates were verified via search, confirming the Table Viz Extens
 [3] Tableau, "Set Actions," Tableau Help Documentation.
 [4] InterWorks, "Tableau Pulse vs. Dashboards," April 2024.
 [5] Tableau, "New Features in Tableau 2025," Official Blog, 2025.
-
