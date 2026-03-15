@@ -141,6 +141,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation aims to provide a comprehensive and authoritative guide to FIXED with conditional statements, covering conceptual models, terminology, core concepts, and standard usage patterns. It is designed to serve as a stable reference for developers, programmers, and anyone interested in understanding and applying fixed-point arithmetic with conditional statements effectively.
