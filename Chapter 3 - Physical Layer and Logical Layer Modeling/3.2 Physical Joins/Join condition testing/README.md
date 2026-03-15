@@ -151,6 +151,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of join condition testing, covering its purpose, conceptual model, terminology, and standard usage patterns. It serves as a stable reference for understanding and implementing join condition testing in various data integration and analysis contexts.
