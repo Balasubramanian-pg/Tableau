@@ -157,6 +157,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 | 1.1 | 2026-02-15 | Added section on edge cases and boundary conditions |
 | 1.2 | 2026-03-01 | Updated references to include latest research on data stacking |
 
----
 
 This documentation serves as a comprehensive guide to the conceptual model, terminology, and standard usage patterns of INCLUDE for stacking calculations, aiming to provide a stable reference for practitioners and developers.
