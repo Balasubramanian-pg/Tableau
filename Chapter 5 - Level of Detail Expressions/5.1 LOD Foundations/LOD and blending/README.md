@@ -158,6 +158,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive overview of the topic of LOD and blending, and is intended to serve as a stable reference for developers and researchers.
