@@ -140,6 +140,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to case sensitivity issues, providing a conceptual model, terminology, and standard usage patterns. It is intended to serve as a stable reference for developers, system administrators, and technical professionals.
