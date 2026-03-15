@@ -128,6 +128,5 @@ Related topics include text encoding, markup languages (e.g., HTML, Markdown), a
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of multi-line formatting, covering its purpose, conceptual model, terminology, core concepts, and standard usage patterns. It also addresses common patterns, anti-patterns, edge cases, and related topics, providing a stable reference for understanding and implementing multi-line formatting correctly.
