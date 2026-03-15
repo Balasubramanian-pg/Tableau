@@ -133,6 +133,5 @@ Related topics include file system design, cache management strategies, and perf
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of extract caching for local files, including the conceptual model, terminology, constraints, and standard usage patterns. It serves as a stable reference for developers, system administrators, and researchers working with file systems and caching technologies.
