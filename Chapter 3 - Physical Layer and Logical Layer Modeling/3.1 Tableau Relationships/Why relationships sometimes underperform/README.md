@@ -135,5 +135,3 @@ Relationships involving partners who have experienced trauma may require special
 | Version | Date | Description |
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
-
----
