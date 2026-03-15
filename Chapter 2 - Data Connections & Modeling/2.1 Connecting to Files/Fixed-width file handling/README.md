@@ -127,5 +127,3 @@ Related topics include data serialization, file parsing, and data validation. Un
 | Version | Date | Description |
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
-
----
