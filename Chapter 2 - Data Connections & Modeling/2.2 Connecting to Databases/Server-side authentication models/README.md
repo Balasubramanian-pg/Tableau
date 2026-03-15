@@ -167,6 +167,5 @@ Edge cases include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to server-side authentication models. It provides a conceptual overview, terminology, and standard usage patterns, as well as common patterns, anti-patterns, and edge cases. The references provided are normative and widely adopted standards in the industry.
