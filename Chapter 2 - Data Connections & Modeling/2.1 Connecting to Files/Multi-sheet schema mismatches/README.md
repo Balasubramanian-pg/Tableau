@@ -143,6 +143,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive guide to multi-sheet schema mismatches, covering the conceptual model, terminology, constraints, and standard usage patterns. It is intended to serve as a stable reference for data professionals, and provides a framework for addressing the challenges of data integration and data governance.
