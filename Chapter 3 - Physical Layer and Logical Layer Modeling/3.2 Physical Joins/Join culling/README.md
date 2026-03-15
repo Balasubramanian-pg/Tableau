@@ -141,6 +141,5 @@ The invariants of the standard model are:
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 Note: The references provided are a selection of authoritative sources that substantiate or inform the topic of join culling. They are intended to provide a starting point for further research and study.
