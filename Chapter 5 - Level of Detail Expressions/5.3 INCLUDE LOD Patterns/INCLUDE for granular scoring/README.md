@@ -131,6 +131,5 @@ Related topics to INCLUDE for granular scoring include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to INCLUDE for granular scoring. It provides a clear and concise overview of the conceptual model, terminology, and standard usage patterns, as well as common patterns, anti-patterns, and edge cases. The references provided are normative and authoritative, and the change log is maintained to track updates and revisions to the documentation.
