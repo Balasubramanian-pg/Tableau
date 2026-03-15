@@ -135,6 +135,5 @@ Edge cases, such as unexpected input data or system failures, can challenge the 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive framework for evaluating calculation performance, covering key concepts, terminology, and standard models. By following this documentation, developers and system administrators can optimize calculation performance, reduce costs, and improve overall productivity.
