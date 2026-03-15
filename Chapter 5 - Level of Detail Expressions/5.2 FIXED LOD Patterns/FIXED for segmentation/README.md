@@ -148,6 +148,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of FIXED for segmentation, covering its conceptual model, terminology, core concepts, and standard practices. It serves as a foundational resource for understanding and applying FIXED for segmentation across various domains.
