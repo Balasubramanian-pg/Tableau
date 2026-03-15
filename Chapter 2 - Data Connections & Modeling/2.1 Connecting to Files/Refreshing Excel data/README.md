@@ -153,6 +153,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to refreshing Excel data. It provides a conceptual model, terminology, and standard usage patterns for refreshing Excel data, as well as common patterns, anti-patterns, and edge cases. The documentation is implementation-agnostic and intended to serve as a stable reference for users and developers.
