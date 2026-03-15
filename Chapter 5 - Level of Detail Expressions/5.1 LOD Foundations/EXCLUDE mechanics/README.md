@@ -144,6 +144,5 @@ Edge cases in EXCLUDE mechanics include scenarios where exclusion criteria are a
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of EXCLUDE mechanics, covering their purpose, conceptual model, terminology, core concepts, standard model, common patterns, anti-patterns, edge cases, and related topics. It serves as a stable reference for understanding and applying EXCLUDE mechanics in various contexts.
