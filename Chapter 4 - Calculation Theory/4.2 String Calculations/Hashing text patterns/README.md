@@ -158,6 +158,5 @@ The following five authoritative external references substantiate or inform this
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to hashing text patterns. It provides a detailed overview of the conceptual model, terminology, constraints, and standard usage patterns. The references provided are normative and substantiate the information presented in this document.
