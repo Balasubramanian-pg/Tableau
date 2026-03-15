@@ -167,6 +167,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of detecting inconsistent casing, covering its purpose, conceptual model, core concepts, and standard practices. It serves as a foundational resource for understanding and addressing casing inconsistencies in text data.
