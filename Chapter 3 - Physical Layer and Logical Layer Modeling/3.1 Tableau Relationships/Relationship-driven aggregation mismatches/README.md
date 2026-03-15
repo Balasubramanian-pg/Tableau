@@ -130,6 +130,5 @@ Edge cases and boundary conditions can arise when dealing with complex relations
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive guide to relationship-driven aggregation mismatches, covering the conceptual model, terminology, constraints, and standard usage patterns. It provides a stable reference for understanding and addressing relationship-driven aggregation mismatches in various contexts.
