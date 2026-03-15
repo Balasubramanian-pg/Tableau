@@ -153,6 +153,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of LOD Foundations, covering its conceptual model, terminology, core concepts, and standard practices. It serves as a reference for understanding and applying level of detail principles in various fields, ensuring efficient, scalable, and meaningful data representation.
