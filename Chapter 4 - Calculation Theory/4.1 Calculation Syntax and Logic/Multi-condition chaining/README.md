@@ -150,6 +150,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of multi-condition chaining, covering its conceptual model, terminology, core concepts, and standard usage patterns. It aims to serve as a stable reference for understanding and implementing multi-condition chaining in various contexts.
