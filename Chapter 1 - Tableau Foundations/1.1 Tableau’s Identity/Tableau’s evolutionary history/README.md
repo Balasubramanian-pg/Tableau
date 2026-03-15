@@ -166,4 +166,3 @@ For the post-June 2024 requirements, verified search results confirmed the relea
 [6] Salesforce, "Tableau Pulse GA Release," February 2024.
 [7] Tableau, "VizQL Data Service API Reference," 2025.
 [8] Salesforce/Tableau, "Tableau Conference 2025 Keynote - Tableau Next," April 2025.
-
