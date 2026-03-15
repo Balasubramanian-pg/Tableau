@@ -132,6 +132,5 @@ NULL values can be challenging to work with, as they can represent unknown or mi
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive guide to initial SQL usage, covering the conceptual model, terminology, constraints, and standard usage patterns. It is intended to serve as a stable reference for users, developers, and administrators working with relational databases.
