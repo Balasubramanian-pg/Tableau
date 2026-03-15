@@ -161,6 +161,5 @@ The following five authoritative external references substantiate or inform this
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to fuzzy-matching concepts, providing a clear and concise overview of the topic, its terminology, and its standard usage patterns. It is intended to serve as a stable reference for practitioners, researchers, and developers working in the field of data integration, data quality, and information retrieval.
