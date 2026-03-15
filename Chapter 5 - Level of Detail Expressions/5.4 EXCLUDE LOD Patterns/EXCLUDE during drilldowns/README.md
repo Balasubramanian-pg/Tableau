@@ -136,6 +136,5 @@ Related topics include data filtering, data visualization, and business intellig
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation serves as a foundational guide for understanding and applying EXCLUDE during drilldowns, emphasizing conceptual clarity, terminology, and standard practices. It is designed to be implementation-agnostic, providing a stable reference for various stakeholders involved in data analysis and business intelligence.
