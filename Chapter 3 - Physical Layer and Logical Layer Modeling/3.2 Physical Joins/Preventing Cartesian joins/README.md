@@ -158,6 +158,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive guide to preventing Cartesian joins, and it is intended to serve as a stable reference for database administrators and developers. The references provided are authoritative and publicly accessible, and they substantiate the concepts and techniques presented in this documentation.
