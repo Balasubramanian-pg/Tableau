@@ -155,6 +155,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of complex join calculations, covering conceptual models, terminology, core concepts, and standard practices. It serves as a foundational resource for understanding and implementing efficient and accurate join operations in various data processing and analysis contexts.
