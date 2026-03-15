@@ -147,6 +147,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to join precedence, covering the conceptual model, terminology, constraints, and standard usage patterns. It is intended to serve as a stable reference for developers, database administrators, and query optimizers.
