@@ -158,6 +158,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to container functions, covering the conceptual model, terminology, core concepts, standard model, common patterns, anti-patterns, edge cases, and related topics. It provides a stable reference for developers, architects, and operators working with containerized applications and serverless computing.
