@@ -123,6 +123,5 @@ Related topics to multi-join conflict resolution include data integration, data 
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to multi-join conflict resolution, covering the conceptual model, terminology, core concepts, standard model, common patterns, anti-patterns, edge cases, and related topics. It provides a stable reference for practitioners, researchers, and developers working in the field of data integration and conflict resolution.
