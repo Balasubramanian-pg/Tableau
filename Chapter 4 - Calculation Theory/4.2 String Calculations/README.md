@@ -147,6 +147,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to string calculations, covering the conceptual model, terminology, constraints, and standard usage patterns. It is intended to serve as a stable reference for developers, engineers, and researchers working with strings.
