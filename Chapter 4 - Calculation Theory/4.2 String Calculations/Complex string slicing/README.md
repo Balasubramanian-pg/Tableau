@@ -134,6 +134,5 @@ The standard model has several invariants that must always hold true, including:
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative reference for complex string slicing, and is intended to serve as a stable reference for developers, implementers, and users.
