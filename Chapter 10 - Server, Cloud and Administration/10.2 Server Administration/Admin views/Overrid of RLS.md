@@ -16,7 +16,6 @@ We are building a security system that works like **Key Cards** in a secure offi
     *   **Navigation:** They only see the cafeteria and their own desk (Basic dashboards).
     *   **Data:** They can strictly see only their own small slice of data (e.g., "New York City").
 
----
 
 ### The Mermaid Diagram: Logic Flow & Output
 
