@@ -132,6 +132,5 @@ Edge cases, such as handling null or missing values, can challenge the standard 
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of understanding many-to-many performance, covering conceptual models, terminology, core concepts, and standard usage patterns. It serves as a stable reference for developers, architects, and researchers working with complex many-to-many relationships.
