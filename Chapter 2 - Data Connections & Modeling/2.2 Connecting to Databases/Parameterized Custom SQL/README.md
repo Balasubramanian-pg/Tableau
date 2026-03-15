@@ -158,6 +158,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of parameterized custom SQL, covering its purpose, conceptual model, terminology, core concepts, standard model, common patterns, anti-patterns, edge cases, related topics, and authoritative references. It serves as a stable reference for understanding and implementing secure and efficient database queries.
