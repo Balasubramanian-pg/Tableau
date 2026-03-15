@@ -163,4 +163,3 @@ Information regarding SQL generation for LODs and filters was derived from estab
 [4] Tableau, "The Tableau Data Model," Tableau Help, 2024.
 [5] Evidence Learn, "Understanding LOD Expressions in Tableau," 2025.
 [6] Tableau, "Tableau Pulse and Metrics Layer," Release Notes 2024-2025.
-
