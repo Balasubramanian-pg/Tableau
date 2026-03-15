@@ -161,6 +161,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 This documentation aims to provide a comprehensive and authoritative guide to join duplicates detection, covering its conceptual model, core concepts, standard practices, and related topics. It is designed to serve as a stable reference for professionals and practitioners in the field of data management and analysis.
