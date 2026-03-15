@@ -133,6 +133,5 @@ Related topics include algebra, calculus, computer algebra systems, and programm
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of Calculation Syntax and Logic, covering its purpose, conceptual model, terminology, core concepts, standard model, common patterns, anti-patterns, edge cases, and related topics. It serves as a foundational reference for understanding and working with mathematical expressions in a variety of contexts.
