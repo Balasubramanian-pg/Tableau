@@ -154,6 +154,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of FIXED for baseline snapshots, covering its purpose, conceptual model, terminology, core concepts, standard model, common patterns, anti-patterns, edge cases, and related topics. It serves as a foundational resource for understanding and implementing effective baseline snapshot management practices.
