@@ -166,6 +166,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to unioning sheets automatically. It provides a conceptual model, terminology, and standard usage patterns, as well as common patterns, anti-patterns, and edge cases. The references provided are authoritative and informative, and the change log will be updated as the documentation evolves.
