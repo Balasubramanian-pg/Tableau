@@ -153,6 +153,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of relationship-generated queries, covering their purpose, conceptual model, terminology, core concepts, standard model, common patterns, anti-patterns, edge cases, and related topics. It serves as a stable reference for understanding and implementing relationship-generated queries in a variety of contexts.
