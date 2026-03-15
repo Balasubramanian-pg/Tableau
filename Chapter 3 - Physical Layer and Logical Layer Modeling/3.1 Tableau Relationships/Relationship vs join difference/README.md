@@ -142,6 +142,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive guide to the topic of relationships vs joins, covering conceptual models, terminology, core concepts, and standard usage patterns. It is intended to serve as a stable reference for data modeling, database design, and query optimization.
