@@ -152,6 +152,5 @@ The trimming operation on a string with only whitespace characters should result
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative reference for trimming whitespace. It provides a clear and concise definition of the conceptual model, terminology, and standard usage patterns for trimming whitespace. The documentation also includes common patterns, anti-patterns, edge cases, and boundary conditions to ensure that implementers have a thorough understanding of the topic.
