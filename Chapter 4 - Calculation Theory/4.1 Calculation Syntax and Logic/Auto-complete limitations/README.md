@@ -157,6 +157,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of auto-complete limitations, covering conceptual models, terminology, core concepts, and standard usage patterns. It serves as a stable reference for understanding the constraints and boundaries of auto-complete functionality, helping developers and users to design and interact with auto-complete features effectively.
