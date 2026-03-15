@@ -128,6 +128,5 @@ Related topics include data integration, data quality, data governance, and data
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive and authoritative guide to selecting correct matching fields. It provides a conceptual model, terminology, and standard usage patterns, as well as common patterns, anti-patterns, and edge cases. The references provided are normative and authoritative, and the change log is maintained to track updates and revisions.
