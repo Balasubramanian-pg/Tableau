@@ -175,6 +175,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive and authoritative guide to regex extraction, covering the conceptual model, terminology, constraints, and standard usage patterns. It is intended to serve as a stable reference for developers, engineers, and researchers working with regex extraction.
