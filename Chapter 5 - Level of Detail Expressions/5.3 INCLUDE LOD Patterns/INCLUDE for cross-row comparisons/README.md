@@ -149,6 +149,5 @@ List adjacent, dependent, or prerequisite topics.
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of INCLUDE for cross-row comparisons, covering its purpose, conceptual model, terminology, core concepts, standard model, common patterns, anti-patterns, edge cases, and related topics. It is designed to serve as a stable reference for understanding and applying INCLUDE in data analysis and query construction.
