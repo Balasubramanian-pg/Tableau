@@ -150,6 +150,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of relationship-driven LOD behavior, covering its conceptual model, terminology, core concepts, and standard practices. It serves as a foundational resource for developers, artists, and researchers working in the field of 3D graphics and game development, aiming to enhance the understanding and application of relationship-driven LOD techniques for improved rendering performance and visual fidelity.
