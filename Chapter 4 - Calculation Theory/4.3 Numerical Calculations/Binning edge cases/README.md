@@ -148,6 +148,5 @@ Provide exactly **five** authoritative external references that substantiate or 
 |---------|------|-------------|
 | 1.0 | 2026-01-31 | Initial documentation |
 
----
 
 This documentation provides a comprehensive overview of binning edge cases, covering conceptual models, terminology, core concepts, and standard practices. It serves as a foundational resource for understanding and addressing the challenges associated with binning data, especially when dealing with edge cases.
