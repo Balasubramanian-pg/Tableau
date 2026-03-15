@@ -134,6 +134,5 @@ Related topics include:
 |---------|------|-------------|
 | 1.0 | 2026-01-30 | Initial documentation |
 
----
 
 Note: This documentation is a comprehensive guide to conformed vs non-conformed dimensions, providing a clear understanding of the concepts, terminology, and standard model. It is intended to serve as a stable reference for data warehousing and business intelligence professionals.
